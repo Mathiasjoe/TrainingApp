@@ -30,6 +30,11 @@ public class Exercise {
     }
 
 
+    /**
+     * Gets name the name of the exercise.
+     *
+     * @return the name
+     */
     public String getName() {
         return name;
     }
