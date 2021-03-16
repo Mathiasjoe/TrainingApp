@@ -21,8 +21,17 @@ public class Exercise {
      * @param name the name
      */
     public Exercise(String name) {
-        this.name = name;
+        if(name.isBlank()) {
+            this.name = "No name";
+        } else {
+            this.name = name;
+        }
 
+    }
+
+
+    public String getName() {
+        return name;
     }
 
     /**
@@ -31,7 +40,11 @@ public class Exercise {
      * @param name the name
      */
     public void editExercise(String name) {
-        this.name = name;
+        if(this.name.isBlank()) {
+            this.name = "No name";
+        } else {
+            this.name = name;
+        }
     }
 
 
@@ -41,7 +54,9 @@ public class Exercise {
      * @param set the set
      */
     public void addSet(Set set) {
-        this.sets.add(set);
+        if(set != null) {
+            this.sets.add(set);
+        }
     }
 
     /**
@@ -50,7 +65,9 @@ public class Exercise {
      * @param set the set
      */
     public void removeSet(Set set) {
-        this.sets.remove(set);
+        if(this.sets.contains(set)) {
+            this.sets.remove(set);
+        }
     }
 
     /**
@@ -81,6 +98,8 @@ public class Exercise {
      * @param order the order
      */
     public void setOrder(int order) {
-        this.order = order;
+        if(order >= 0) {
+            this.order = order;
+        }
     }
 }

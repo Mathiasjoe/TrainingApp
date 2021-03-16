@@ -15,7 +15,12 @@ public class Set {
      * @param repetitions the repetitions
      */
     public Set(float weight, int repetitions) {
-        this.repetitions = repetitions;
+        if(repetitions >= 0) {
+            this.repetitions = repetitions;
+        } else {
+            this.repetitions = 1;
+        }
+
         this.weight = weight;
     }
 
@@ -25,7 +30,11 @@ public class Set {
      * @param repetitions the repetitions
      */
     public void setRepetitions(int repetitions) {
-        this.repetitions = repetitions;
+        if(repetitions >= 0) {
+            this.repetitions = repetitions;
+        } else {
+            this.repetitions = 1;
+        }
     }
 
     /**
@@ -34,6 +43,10 @@ public class Set {
      * @param weight the weight
      */
     public void setWeight(float weight) {
-        this.weight = weight;
+        if(weight >= 0 ) {
+            this.weight = weight;
+        } else {
+            this.weight = 0;
+        }
     }
 }
