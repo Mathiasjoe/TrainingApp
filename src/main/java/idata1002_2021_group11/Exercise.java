@@ -42,7 +42,7 @@ public class Exercise {
     }
 
     /**
-     * Returns the max lift of the exercise. Returns null if max lift has not been set.
+     * Returns the max lift of the exercise. Returns 0 if max lift has not been set.
      *
      * @return The max lift
      */
