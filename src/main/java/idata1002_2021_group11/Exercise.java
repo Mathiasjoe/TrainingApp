@@ -12,11 +12,13 @@ public class Exercise {
 
     private ArrayList<Set> sets;
 
+    private int maxLift;
+
     private int order;
 
     /**
      * Instantiates a new Exercise.
-     * When the user first creates an excercise he sets the name. Then he adds sets according to how many sets he chooses to have
+     * When the user first creates an exercise he sets the name. Then he adds sets according to how many sets he chooses to have
      *
      * @param name the name
      */
@@ -37,6 +39,15 @@ public class Exercise {
      */
     public String getName() {
         return name;
+    }
+
+    /**
+     * Returns the max lift of the exercise. Returns null if max lift has not been set.
+     *
+     * @return The max lift
+     */
+    public int getMaxLift() {
+        return maxLift;
     }
 
     /**
@@ -105,6 +116,19 @@ public class Exercise {
     public void setOrder(int order) {
         if(order >= 0) {
             this.order = order;
+        }
+    }
+
+    /**
+     * Sets the max lift of the exercise.
+     *
+     * @param maxLift The max lift
+     */
+    public void setMaxLift(int maxLift) {
+        if (maxLift > 0) {
+            this.maxLift = maxLift;
+        } else {
+            throw new IllegalArgumentException("maxLift must be a positive number...");
         }
     }
 }
