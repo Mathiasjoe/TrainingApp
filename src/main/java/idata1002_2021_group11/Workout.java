@@ -42,8 +42,8 @@ public class Workout {
      *
      * @param exercise the exercise
      */
-    public void newExercise(Exercise exercise){
-        if(exercise != null){
+    public void newExercise(Exercise exercise) {
+        if (exercise != null) {
             this.exercises.add(exercise);
         }
     }
@@ -69,9 +69,9 @@ public class Workout {
      * @param rating the rating
      */
     public void setRating(int rating) {
-        if(this.rating >= 1 && this.rating <= 6){
+        if (this.rating >= 1 && this.rating <= 6) {
             this.rating = rating;
-        }else{
+        } else {
             System.out.println("Invalid input");
         }
     }
