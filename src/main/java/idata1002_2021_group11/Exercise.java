@@ -12,7 +12,7 @@ public class Exercise {
 
     private ArrayList<Set> sets;
 
-    private int maxLift;
+    private float maxLift;
 
     private int order;
 
@@ -46,7 +46,7 @@ public class Exercise {
      *
      * @return The max lift
      */
-    public int getMaxLift() {
+    public float getMaxLift() {
         return maxLift;
     }
 
@@ -124,7 +124,7 @@ public class Exercise {
      *
      * @param maxLift The max lift
      */
-    public void setMaxLift(int maxLift) {
+    public void setMaxLift(float maxLift) {
         if (maxLift > 0) {
             this.maxLift = maxLift;
         } else {
