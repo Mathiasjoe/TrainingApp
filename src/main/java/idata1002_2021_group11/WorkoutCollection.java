@@ -22,6 +22,9 @@ public class WorkoutCollection {
      * @param workout the workout
      */
     public void newWorkout(Workout workout) {
+        if(workout == null) {
+            throw new IllegalArgumentException("workout can't be null");
+        }
         workouts.add(workout);
     }
 
@@ -33,6 +36,8 @@ public class WorkoutCollection {
     public void removeWorkout(Workout workout) {
         if(this.workouts.contains(workout)) {
             this.workouts.remove(workout);
+        } else {
+            throw new IllegalArgumentException("Workout does not exist");
         }
     }
 

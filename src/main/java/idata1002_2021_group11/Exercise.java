@@ -23,8 +23,10 @@ public class Exercise {
      * @param name the name
      */
     public Exercise(String name) {
-        if(name.isBlank()) {
-            this.name = "No name";
+        if(name == null) {
+            throw new IllegalArgumentException("Name cannot be null");
+        } else if(name.isBlank()) {
+            throw new IllegalArgumentException("Name cannot be blank");
         } else {
             this.name = name;
         }
@@ -56,8 +58,10 @@ public class Exercise {
      * @param name the name
      */
     public void editExercise(String name) {
-        if(this.name.isBlank()) {
-            this.name = "No name";
+        if(this.name == null) {
+            throw new IllegalArgumentException(("Name can't be null"));
+        } else if (this.name.isBlank()) {
+            throw new IllegalArgumentException("Name cannot be blank");
         } else {
             this.name = name;
         }
@@ -70,7 +74,9 @@ public class Exercise {
      * @param set the set
      */
     public void addSet(Set set) {
-        if(set != null) {
+        if(set == null) {
+            throw new IllegalArgumentException("Set can't be null");
+        } else {
             this.sets.add(set);
         }
     }
@@ -83,6 +89,8 @@ public class Exercise {
     public void removeSet(Set set) {
         if(this.sets.contains(set)) {
             this.sets.remove(set);
+        } else {
+            throw new IllegalArgumentException("Set does not exist");
         }
     }
 
@@ -114,8 +122,10 @@ public class Exercise {
      * @param order the order
      */
     public void setOrder(int order) {
-        if(order >= 0) {
+        if(order > 0) {
             this.order = order;
+        } else {
+            throw new IllegalArgumentException("Order cannot be a negative number");
         }
     }
 

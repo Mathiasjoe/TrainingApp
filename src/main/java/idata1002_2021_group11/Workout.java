@@ -22,11 +22,38 @@ public class Workout {
      * @param date        the date
      */
     public Workout(String name, String description, LocalDate date) {
+
+        if(name.isBlank()) {
+            throw new IllegalArgumentException("Name can't be blank");
+        }
+        if(description.isBlank()) {
+            this.description = "";
+        } else {
+            this.description = description;
+        }
+
+        if(date == null) {
+            throw new IllegalArgumentException("Date cannot be null");
+        }
         this.name = name;
-        this.description = description;
         this.date = date;
+
         this.exercises = new ArrayList<>();
     }
+
+    public String getWorkoutName() {
+        return this.name;
+    }
+    public String getDescription() {
+        return this.description;
+    }
+    public LocalDate getDate() {
+        return this.date;
+    }
+    public int getRating() {
+        return this.rating;
+    }
+
 
     /**
      * Gets exercises.
@@ -42,10 +69,11 @@ public class Workout {
      *
      * @param exercise the exercise
      */
-    public void newExercise(Exercise exercise) {
-        if (exercise != null) {
-            this.exercises.add(exercise);
+    public void addExercise(Exercise exercise) {
+        if (exercise == null) {
+           throw new IllegalArgumentException("Excercise can't be null");
         }
+        this.exercises.add(exercise);
     }
 
     /**
@@ -57,7 +85,7 @@ public class Workout {
         if (this.exercises.contains(exercise)) {
             this.exercises.remove(exercise);
         } else {
-            System.out.println("This exercise does not exist");
+            throw new IllegalArgumentException("Excercise does not excist");
         }
     }
 
@@ -69,10 +97,10 @@ public class Workout {
      * @param rating the rating
      */
     public void setRating(int rating) {
-        if (this.rating >= 1 && this.rating <= 6) {
+        if (rating >= 1 && rating <= 6) {
             this.rating = rating;
         } else {
-            System.out.println("Invalid input");
+            throw new IllegalArgumentException("rating must be greater or equal to 1 and less or equal to 6");
         }
     }
 
@@ -82,6 +110,9 @@ public class Workout {
      * @param date the date
      */
     public void setDate(LocalDate date) {
+        if(date == null) {
+            throw new IllegalArgumentException("Date cannot be null");
+        }
         this.date = date;
     }
 

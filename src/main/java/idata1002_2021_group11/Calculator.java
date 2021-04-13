@@ -21,7 +21,7 @@ public class Calculator {
             throw new IllegalArgumentException("Failed to calculate max lift, exercise can not be null...");
         } else if (weight < 0) {
             throw new IllegalArgumentException("Failed to calculate max lift, weight must be a positive number...");
-        } else if (repetitions < 0) {
+        } else if (repetitions <= 0) {
             throw new IllegalArgumentException("Failed to calculate max lift, repetitions must be a positive number...");
         } else {
             if (repetitions == 1) {
