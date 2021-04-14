@@ -146,5 +146,33 @@ public class Controller  {
 
   }
 
+  /**
+   * Switches to the calculate bench press scene.
+   *
+   * @param event
+   * @throws IOException
+   */
+  @FXML public void switchToBenchPressScene(ActionEvent event) throws IOException
+  {
+    URL createBenchPress = getClass().getClassLoader().getResource("calculateBenchpress.fxml");
+
+    assert createBenchPress != null;
+    Parent root = FXMLLoader.load(createBenchPress);
+
+    Scene createBenchPressScene = new Scene(root);
+    Stage createBenchPressWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+    root.getStylesheets().add("TrainingApp.css");
+    createBenchPressWindow.setScene(createBenchPressScene);
+    createBenchPressWindow.show();
+
+  }
+
+
+
+
+
+
+
 
 }

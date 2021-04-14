@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CalculateBenchpress"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #202020;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
+    <children>
+        <Label layoutX="13.0" layoutY="11.0" text="BenchPress calculator" textFill="WHITE">
+            <font>
+                <Font name="Calibri" size="22.0" />
+            </font>
+        </Label>
+        <Label layoutX="31.0" layoutY="132.0" prefHeight="17.0" prefWidth="101.0" text="Repetitions:" textFill="WHITE">
+            <font>
+                <Font name="JetBrains Mono ExtraBold" size="12.0" />
+            </font>
+        </Label>
+        <TextField layoutX="150.0" layoutY="132.0" prefHeight="41.0" prefWidth="273.0" styleClass="TextField" />
+        <Label layoutX="31.0" layoutY="202.0" prefHeight="17.0" prefWidth="65.0" text="Sets:" textFill="WHITE">
+            <font>
+                <Font name="JetBrains Mono ExtraBold" size="12.0" />
+            </font>
+        </Label>
+        <TextField layoutX="150.0" layoutY="202.0" prefHeight="41.0" prefWidth="273.0" styleClass="TextField" />
+        <Label layoutX="31.0" layoutY="271.0" prefHeight="17.0" prefWidth="79.0" text="Weight:" textFill="WHITE">
+            <font>
+                <Font name="JetBrains Mono ExtraBold" size="12.0" />
+            </font>
+        </Label>
+        <TextField layoutX="150.0" layoutY="271.0" prefHeight="41.0" prefWidth="273.0" styleClass="TextField" />
+        <Button layoutX="150.0" layoutY="337.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="273.0" styleClass="ButtonGreen" text="Calculate">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+        <Label layoutX="456.0" layoutY="11.0" text="Results" textFill="WHITE">
+            <font>
+                <Font name="Calibri" size="22.0" />
+            </font>
+        </Label>
+        <TextArea layoutX="521.0" layoutY="35.0" prefHeight="438.0" prefWidth="429.0" styleClass="TextField" AnchorPane.rightAnchor="15.0" />
+        <Button fx:id="homeButton" layoutX="9.0" layoutY="545.0" mnemonicParsing="false" onAction="#returnToMainScene" prefHeight="41.0" prefWidth="880.0" styleClass="Button" text="Home" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+        <Button fx:id="calculatorButton" layoutX="15.0" layoutY="489.0" mnemonicParsing="false" onAction="#openCalculatorButton" prefHeight="41.0" prefWidth="880.0" styleClass="Button" text="Return to the calculator page" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ChoiceBox layoutX="150.0" layoutY="57.0" prefHeight="41.0" prefWidth="273.0" styleClass="TextField" />
+      <Label layoutX="32.0" layoutY="57.0" text="Choose something" textFill="WHITE" />
+    </children>
 </AnchorPane>
