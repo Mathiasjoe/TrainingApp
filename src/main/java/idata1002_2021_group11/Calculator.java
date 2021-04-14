@@ -12,7 +12,7 @@ public class Calculator {
      *
      * @param exercise The exercise for which the max lift will be changed.
      * @param weight The weight lifted.
-     * @param repetitions The repetitions lifted.
+     * @param repetitions The repetitions performed.
      */
     public void calculateAndSetMaxLift(Exercise exercise, float weight, int repetitions) {
         float maxLift;

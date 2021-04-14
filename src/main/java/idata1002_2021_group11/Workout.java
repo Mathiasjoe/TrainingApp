@@ -4,7 +4,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
- * The type Workout.
+ * The Workout class represents a list of exercises.
+ * The workout has a name, a description and a date.
  */
 public class Workout {
 
@@ -15,18 +16,19 @@ public class Workout {
     private LocalDate date;
 
     /**
-     * Instantiates a new Workout.
+     * Instantiates a new Workout. Initially, the workout has no exercises,
+     * these will be added later.
      *
-     * @param name        the name
-     * @param description the description
-     * @param date        the date
+     * @param name        The name of the workout.
+     * @param description The description of the workout.
+     * @param date        The date of the workout.
      */
     public Workout(String name, String description, LocalDate date) {
 
-        if(name.isBlank()) {
+        if(name == null || name.isBlank()) {
             throw new IllegalArgumentException("Name can't be blank");
         }
-        if(description.isBlank()) {
+        if(description == null || description.isBlank()) {
             this.description = "";
         } else {
             this.description = description;
@@ -41,24 +43,47 @@ public class Workout {
         this.exercises = new ArrayList<>();
     }
 
+    /**
+     * Returns the name of the workout.
+     *
+     * @return Returns the name of the workout.
+     */
     public String getWorkoutName() {
         return this.name;
     }
+
+    /**
+     * Returns the description of the workout.
+     *
+     * @return Returns the description of the workout.
+     */
     public String getDescription() {
         return this.description;
     }
+
+    /**
+     * Returns the date of the workout.
+     *
+     * @return Returns the date of the workout.
+     */
     public LocalDate getDate() {
         return this.date;
     }
+
+    /**
+     * Returns the rating of the workout.
+     *
+     * @return Returns the rating of the workout.
+     */
     public int getRating() {
         return this.rating;
     }
 
 
     /**
-     * Gets exercises.
+     * Returns all the exercises of the workout as an ArrayList.
      *
-     * @return the exercises
+     * @return The exercises as an ArrayList.
      */
     public ArrayList<Exercise> getExercises() {
         return exercises;
@@ -67,7 +92,7 @@ public class Workout {
     /**
      * Add a new exercise to the Workout register.
      *
-     * @param exercise the exercise
+     * @param exercise The new exercise to be added.
      */
     public void addExercise(Exercise exercise) {
         if (exercise == null) {
@@ -77,9 +102,9 @@ public class Workout {
     }
 
     /**
-     * Remove exercise from the Workout register.
+     * Removes an exercise from the Workout register.
      *
-     * @param exercise the exercise
+     * @param exercise The exercise to be removed.
      */
     public void removeExercise(Exercise exercise) {
         if (this.exercises.contains(exercise)) {
@@ -94,7 +119,7 @@ public class Workout {
      * Sets rating to the workout.
      * The rating have to be between (or equal to) one and six to be a valid input.
      *
-     * @param rating the rating
+     * @param rating The rating to be set.
      */
     public void setRating(int rating) {
         if (rating >= 1 && rating <= 6) {
@@ -107,7 +132,7 @@ public class Workout {
     /**
      * Sets date for the workout.
      *
-     * @param date the date
+     * @param date The date to be set.
      */
     public void setDate(LocalDate date) {
         if(date == null) {
