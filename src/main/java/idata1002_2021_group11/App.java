@@ -22,6 +22,7 @@ public class App extends Application {
   public void start(Stage stage) throws Exception {
     URL url = getClass().getClassLoader()
         .getResource("application.fxml");
+
     Parent root = FXMLLoader.load(url);
 
     Scene scene = new Scene(root);
@@ -63,4 +64,17 @@ public class App extends Application {
 //        JSONParser jsonParser = new JSONParser();
 //        return jsonParser.parse(reader);
 //    }
+
+
+    public static void main(String[] args)
+    {
+      launch();
+    }
+
+
+
+
+
+
+
 }
