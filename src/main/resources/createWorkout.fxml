@@ -1,29 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.Cursor?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="808.0" style="-fx-background-color: #202020;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
-   <children>
-       <Button fx:id="calculatorButton" layoutX="11.0" layoutY="443.0" mnemonicParsing="false" onAction="#returnToMainScene" prefHeight="43.0" prefWidth="786.0" style="-fx-background-color: #386FA4;" styleClass="Button" text="Home" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
-           <cursor>
-               <Cursor fx:constant="HAND" />
-           </cursor>
-       </Button>
-      <Accordion layoutX="-11.0" layoutY="31.0">
-        <panes>
-          <TitledPane animated="false" text="untitled 1">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </TitledPane>
-          <TitledPane animated="false" text="untitled 2">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
-          </TitledPane>
-        </panes>
-      </Accordion>
-   </children>
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #202020;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
+    <children>
+        <Button fx:id="calculatorButton" layoutX="11.0" layoutY="443.0" mnemonicParsing="false" onAction="#returnToMainScene" prefHeight="43.0" prefWidth="786.0" styleClass="Button" text="Home" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Accordion layoutX="-11.0" layoutY="31.0" />
+        <Label graphicTextGap="0.0" layoutX="15.0" layoutY="14.0" text="Your workouts:" textFill="WHITE" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="14.0">
+            <font>
+                <Font name="Calibri Bold" size="28.0" />
+            </font>
+        </Label>
+        <TextArea layoutX="-1.0" layoutY="58.0" prefHeight="407.0" prefWidth="432.0" styleClass="TextField" text="Your workouts will appear here." AnchorPane.leftAnchor="15.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets></TextArea>
+        <Label layoutX="478.0" layoutY="48.0" prefHeight="43.0" prefWidth="267.0" text="Add new exercise:" textFill="WHITE">
+            <font>
+                <Font name="Calibri Bold" size="26.0" />
+            </font>
+        </Label>
+        <TextField layoutX="476.0" layoutY="118.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
+        <TextField layoutX="476.0" layoutY="191.0" prefHeight="35.0" prefWidth="402.0" styleClass="TextField" />
+        <TextField layoutX="476.0" layoutY="347.0" prefHeight="35.0" prefWidth="402.0" styleClass="TextField" />
+                <Button layoutX="478.0" layoutY="430.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="402.0" styleClass="Button" text="Add exercise">
+            <font>
+                <Font name="Jokerman" size="13.0" />
+            </font>
+        </Button>
+
+        <Label layoutX="478.0" layoutY="91.0" prefHeight="27.0" prefWidth="267.0" text="Enter the name of the workout:" textFill="WHITE">
+            <font>
+                <Font name="Calibri" size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="476.0" layoutY="173.0" text="Enter number of sets:" textFill="WHITE">
+            <font>
+                <Font name="Calibri" size="16.0" />
+            </font>
+        </Label>
+        <Label layoutX="476.0" layoutY="320.0" prefHeight="27.0" prefWidth="176.0" text="Enter your weight:" textFill="WHITE">
+            <font>
+                <Font name="Calibri" size="16.0" />
+            </font>
+        </Label>
+
+        <Button layoutX="15.0" layoutY="478.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="Button" text="Complete selected">
+            <font>
+                <Font name="Arial" size="13.0" />
+            </font>
+        </Button>
+        <Button layoutX="239.0" layoutY="478.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="ButtonRed" text="Delete selected">
+            <font>
+                <Font name="Jokerman" size="13.0" />
+            </font>
+        </Button>
+        <TextField layoutX="476.0" layoutY="270.0" prefHeight="35.0" prefWidth="402.0" styleClass="TextField" />
+        <Label layoutX="478.0" layoutY="243.0" prefHeight="27.0" prefWidth="185.0" text="Enter number of reps:" textFill="WHITE">
+            <font>
+                <Font name="Calibri" size="16.0" />
+            </font>
+        </Label>
+    </children>
 </AnchorPane>

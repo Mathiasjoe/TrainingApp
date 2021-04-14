@@ -4,8 +4,15 @@
 }
 
 .Button {
-    -fx-padding: 15 15 15 15;
     -fx-font-size: 10pt;
+    -fx-background-color: #428585;
+    -fx-text-fill: white;
+}
+
+.ButtonRed {
+    -fx-font-size: 10pt;
+    -fx-background-color: #854249;
+    -fx-text-fill: white;
 }
 
 .Button:pressed {
@@ -13,16 +20,13 @@
 }
 
 .TextField {
-    -fx-background-color: #202020;
-    -fx-border-color: #202020;
-    -fx-border-width: 2px;
-    -fx-border-radius: 2px;
-    -fx-border-inset: 2px;
+    -fx-background-color: #363636;
+    -fx-border-color: #363636;
+    -fx-border-width: 15px;
+    -fx-border-radius: 20px;
+    -fx-text-fill:white;
 }
 
 .TextField .content {
-}
-
-.TextField .textArea {
-    -fx-text-fill: WHITE;
+    -fx-background-color: #363636;
 }

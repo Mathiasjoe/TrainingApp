@@ -3,17 +3,31 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="500.0" prefWidth="808.0" style="-fx-background-color: #202020;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #202020;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
    <children>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-      <AnchorPane layoutY="171.0" prefHeight="200.0" prefWidth="518.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane layoutY="-1.0" prefHeight="547.0" prefWidth="900.0">
          <children>
-             <Button fx:id="calculatorButton" layoutX="15.0" layoutY="280.0" mnemonicParsing="false" onAction="#returnToMainScene" prefHeight="43.0" prefWidth="786.0" style="-fx-background-color: #386FA4;" styleClass="Button" text="Home" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+            <Label layoutX="32.0" layoutY="14.0" prefHeight="27.0" prefWidth="234.0" text="Premade workouts" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Calibri" size="28.0" />
+               </font>
+            </Label>
+             <Button layoutX="14.0" layoutY="481.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="Button" text="Complete selected" AnchorPane.leftAnchor="14.0">
+                 <font>
+                     <Font name="Arial" size="13.0" />
+                 </font>
+             </Button>
+         </children></AnchorPane>
+      <AnchorPane layoutY="171.0" prefHeight="79.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+             <Button fx:id="calculatorButton" layoutX="15.0" layoutY="280.0" mnemonicParsing="false" onAction="#returnToMainScene" prefHeight="43.0" prefWidth="786.0" styleClass="Button" text="Home" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
                  <cursor>
                      <Cursor fx:constant="HAND" />
                  </cursor>
              </Button>
          </children></AnchorPane>
+      <TextField alignment="TOP_LEFT" layoutX="271.0" layoutY="59.0" prefHeight="409.0" prefWidth="900.0" styleClass="TextField" text="Premade workouts will show up here" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="59.0" />
    </children>
 </AnchorPane>

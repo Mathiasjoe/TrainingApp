@@ -55,6 +55,7 @@ public class Controller  {
 
     Stage createWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
+    root.getStylesheets().add("TrainingApp.css");
     createWindow.setScene(createWorkOutScene);
     createWindow.show();
   }
@@ -76,6 +77,7 @@ public class Controller  {
     Scene createPremadeWorkoutScene = new Scene(root);
     Stage createPremadeWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
+    root.getStylesheets().add("TrainingApp.css");
     createPremadeWindow.setScene(createPremadeWorkoutScene);
     createPremadeWindow.show();
   }
@@ -97,6 +99,7 @@ public class Controller  {
     Scene createCalculatorScene = new Scene(root);
     Stage createCalculatorWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
+    root.getStylesheets().add("TrainingApp.css");
     createCalculatorWindow.setScene(createCalculatorScene);
     createCalculatorWindow.show();
   }
