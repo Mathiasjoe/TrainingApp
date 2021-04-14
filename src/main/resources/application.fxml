@@ -32,30 +32,80 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox prefHeight="449.0" prefWidth="808.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" style="-fx-background-color: #F2F4F3;" VBox.vgrow="ALWAYS">
+<VBox prefHeight="500.0" prefWidth="808.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" style="-fx-background-color: #202020;" VBox.vgrow="ALWAYS">
       <children>
-         <Accordion layoutX="253.0" layoutY="126.0">
-           <panes>
-             <TitledPane animated="false" text="untitled 1">
-               <content>
-                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-             </TitledPane>
-             <TitledPane animated="false" text="untitled 2">
-               <content>
-                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-             </TitledPane>
-             <TitledPane animated="false" text="untitled 3">
-               <content>
-                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-               </content>
-             </TitledPane>
-           </panes>
-         </Accordion>
-      </children></AnchorPane>
+         <AnchorPane layoutY="145.0" prefHeight="352.0" prefWidth="808.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <children>
+                <Button fx:id="createWorkoutButton" layoutX="14.0" layoutY="349.0" mnemonicParsing="false" onAction="#switchToCreateWorkoutButton" prefHeight="43.0" prefWidth="255.0" style="-fx-background-color: #386FA4;" styleClass="Button" text="Create your own workout sessions" textFill="#fcfcfc" AnchorPane.bottomAnchor="15.0">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+               <Button fx:id="premadeWorkoutButton" layoutX="277.0" layoutY="312.0" mnemonicParsing="false" onAction="#switchToPremadeWorkoutButton" prefHeight="43.0" prefWidth="255.0" style="-fx-background-color: #386FA4;" styleClass="Button" text="Pick from premade workout sessions" textFill="WHITE" AnchorPane.bottomAnchor="15.0">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <Button fx:id="calculatorButton" layoutX="540.0" layoutY="312.0" mnemonicParsing="false" onAction="#openCalculatorButton" prefHeight="43.0" prefWidth="255.0" style="-fx-background-color: #386FA4;" styleClass="Button" text="Calculate your recommended maximum" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="15.0">
+                  <cursor>
+                     <Cursor fx:constant="HAND" />
+                  </cursor>
+               </Button>
+               <ImageView fitHeight="220.0" fitWidth="261.0" layoutX="32.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+                  <image>
+                     <Image url="@whitelifting.png" />
+                  </image>
+                  <effect>
+                     <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.51" surfaceScale="0.0">
+                        <light>
+                           <Light.Distant />
+                        </light>
+                     </Lighting>
+                  </effect></ImageView>
+               <ImageView fitHeight="220.0" fitWidth="230.0" layoutX="294.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+                  <image>
+                     <Image url="@whiteposing.png" />
+                  </image>
+                  <effect>
+                     <Lighting diffuseConstant="2.0" specularConstant="0.51" specularExponent="22.79" surfaceScale="0.0">
+                        <bumpInput>
+                           <Lighting bumpInput="$null">
+                              <light>
+                                 <Light.Distant />
+                              </light>
+                           </Lighting>
+                        </bumpInput>
+                        <light>
+                           <Light.Distant />
+                        </light>
+                     </Lighting>
+                  </effect></ImageView>
+               <ImageView fitHeight="230.0" fitWidth="255.0" layoutX="553.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+                  <image>
+                     <Image url="@whitecalculator.png" />
+                  </image>
+                  <cursor>
+                     <Cursor fx:constant="DEFAULT" />
+                  </cursor>
+                  <effect>
+                     <Lighting diffuseConstant="2.0" specularExponent="9.3" surfaceScale="0.0">
+                        <bumpInput>
+                           <Shadow />
+                        </bumpInput>
+                        <light>
+                           <Light.Distant />
+                        </light>
+                     </Lighting>
+                  </effect></ImageView>
+            </children></AnchorPane>
+         <TextArea id="TextField" fx:id="mainTextBox" editable="false" layoutX="14.0" layoutY="14.0" mouseTransparent="true" prefHeight="98.0" prefWidth="778.0" styleClass="TextField" text="Information about the users workout and day goes here" wrapText="true" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0" />
+      </children>
+    </AnchorPane>
 </VBox>

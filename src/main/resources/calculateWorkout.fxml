@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="808.0" style="-fx-background-color: #202020;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
+   <children>
+       <Button fx:id="calculatorButton" layoutX="11.0" layoutY="443.0" mnemonicParsing="false" onAction="#returnToMainScene" prefHeight="43.0" prefWidth="786.0" style="-fx-background-color: #386FA4;" styleClass="Button" text="Home" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+           <cursor>
+               <Cursor fx:constant="HAND" />
+           </cursor>
+       </Button>
+   </children>
+</AnchorPane>

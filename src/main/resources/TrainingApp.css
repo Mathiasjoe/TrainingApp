@@ -1,0 +1,28 @@
+.root {
+   -fx-font-weight: bold;
+   -fx-font-family: Calibri;
+}
+
+.Button {
+    -fx-padding: 15 15 15 15;
+    -fx-font-size: 10pt;
+}
+
+.Button:pressed {
+    -fx-padding: 10 10 10 10;
+}
+
+.TextField {
+    -fx-background-color: #202020;
+    -fx-border-color: #202020;
+    -fx-border-width: 2px;
+    -fx-border-radius: 2px;
+    -fx-border-inset: 2px;
+}
+
+.TextField .content {
+}
+
+.TextField .textArea {
+    -fx-text-fill: WHITE;
+}
