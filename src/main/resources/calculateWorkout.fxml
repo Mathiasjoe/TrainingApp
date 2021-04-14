@@ -27,10 +27,13 @@
                 <Font name="JetBrains Mono Light" size="17.0" />
             </font>
         </Label>
-        <Button layoutX="25.0" layoutY="187.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="427.0" styleClass="Button" text="Open bench press calculator">
+        <Button fx:id="switchToBenchPressButton" layoutX="25.0" layoutY="187.0" mnemonicParsing="false" onAction="#switchToBenchPressScene" prefHeight="43.0" prefWidth="427.0" styleClass="Button" text="Open bench press calculator">
             <font>
                 <Font name="JetBrains Mono Regular" size="12.0" />
             </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
         <Label layoutX="25.0" layoutY="240.0" prefHeight="54.0" prefWidth="344.0" text="Future calculators if added:" textFill="WHITE" wrapText="true">
             <font>
@@ -41,6 +44,9 @@
             <font>
                 <Font name="JetBrains Mono Regular" size="12.0" />
             </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
     </children>
 </AnchorPane>

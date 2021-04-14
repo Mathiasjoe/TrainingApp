@@ -29,12 +29,15 @@
             </font>
         </Label>
         <TextField layoutX="476.0" layoutY="118.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
-        <TextField layoutX="476.0" layoutY="191.0" prefHeight="35.0" prefWidth="402.0" styleClass="TextField" />
-        <TextField layoutX="476.0" layoutY="347.0" prefHeight="35.0" prefWidth="402.0" styleClass="TextField" />
-                <Button layoutX="478.0" layoutY="430.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="402.0" styleClass="Button" text="Add exercise">
+        <TextField layoutX="476.0" layoutY="191.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
+        <TextField layoutX="476.0" layoutY="347.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
+                <Button layoutX="478.0" layoutY="430.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="402.0" styleClass="ButtonGreen" text="Add exercise">
             <font>
                 <Font name="Jokerman" size="13.0" />
             </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
 
         <Label layoutX="478.0" layoutY="91.0" prefHeight="27.0" prefWidth="267.0" text="Enter the name of the workout:" textFill="WHITE">
@@ -53,17 +56,23 @@
             </font>
         </Label>
 
-        <Button layoutX="15.0" layoutY="478.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="Button" text="Complete selected">
+        <Button layoutX="15.0" layoutY="478.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="ButtonGreen" text="Complete selected">
             <font>
                 <Font name="Arial" size="13.0" />
             </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
         <Button layoutX="239.0" layoutY="478.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="ButtonRed" text="Delete selected">
             <font>
                 <Font name="Jokerman" size="13.0" />
             </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
-        <TextField layoutX="476.0" layoutY="270.0" prefHeight="35.0" prefWidth="402.0" styleClass="TextField" />
+        <TextField layoutX="476.0" layoutY="270.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
         <Label layoutX="478.0" layoutY="243.0" prefHeight="27.0" prefWidth="185.0" text="Enter number of reps:" textFill="WHITE">
             <font>
                 <Font name="Calibri" size="16.0" />

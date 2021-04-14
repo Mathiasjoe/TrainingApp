@@ -5,13 +5,19 @@
 
 .Button {
     -fx-font-size: 10pt;
-    -fx-background-color: #428585;
+    -fx-background-color: #5a85a3;
     -fx-text-fill: white;
 }
 
 .ButtonRed {
     -fx-font-size: 10pt;
     -fx-background-color: #854249;
+    -fx-text-fill: white;
+}
+
+.ButtonGreen {
+    -fx-font-size: 10pt;
+    -fx-background-color: #73679e;
     -fx-text-fill: white;
 }
 
