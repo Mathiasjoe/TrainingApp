@@ -35,4 +35,5 @@
 
 .TextField .content {
     -fx-background-color: #363636;
+    -fx-border-color: #363636;
 }

@@ -41,7 +41,7 @@
 <VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" style="-fx-background-color: #202020;" VBox.vgrow="ALWAYS">
       <children>
-         <AnchorPane layoutY="145.0" prefHeight="400.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <AnchorPane layoutY="63.0" prefHeight="400.0" prefWidth="900.0" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
             <children>
                 <Button fx:id="createWorkoutButton" layoutX="14.0" layoutY="349.0" mnemonicParsing="false" onAction="#switchToCreateWorkoutButton" prefHeight="43.0" prefWidth="280.0" styleClass="Button" text="Your Workouts" textFill="#fcfcfc" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0">
                     <cursor>
@@ -58,36 +58,21 @@
                      <Cursor fx:constant="HAND" />
                   </cursor>
                </Button>
-               <ImageView fitHeight="287.0" fitWidth="280.0" layoutX="10.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+               <ImageView blendMode="ADD" fitHeight="287.0" fitWidth="280.0" layoutX="10.0" layoutY="6.0" opacity="0.73" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                   <image>
                      <Image url="@whitelifting.png" />
                   </image>
                   <effect>
-                     <Lighting bumpInput="$null" diffuseConstant="2.0" specularConstant="0.0" specularExponent="12.09" surfaceScale="0.0">
-                        <light>
-                           <Light.Distant />
-                        </light>
-                     </Lighting>
+                     <DropShadow height="89.2" radius="34.4625" width="50.65" />
                   </effect></ImageView>
-               <ImageView fitHeight="264.0" fitWidth="274.0" layoutX="311.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+               <ImageView blendMode="ADD" fitHeight="264.0" fitWidth="274.0" layoutX="311.0" opacity="0.83" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                   <image>
                      <Image url="@whiteposing.png" />
                   </image>
                   <effect>
-                     <Lighting diffuseConstant="2.0" specularConstant="0.0" specularExponent="40.0" surfaceScale="0.0">
-                        <bumpInput>
-                           <Lighting bumpInput="$null">
-                              <light>
-                                 <Light.Distant />
-                              </light>
-                           </Lighting>
-                        </bumpInput>
-                        <light>
-                           <Light.Distant />
-                        </light>
-                     </Lighting>
+                     <DropShadow height="91.91" radius="38.0425" width="62.26" />
                   </effect></ImageView>
-               <ImageView fitHeight="313.0" fitWidth="280.0" layoutX="605.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
+               <ImageView blendMode="ADD" fitHeight="313.0" fitWidth="280.0" layoutX="605.0" layoutY="1.0" opacity="0.81" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                   <image>
                      <Image url="@whitecalculator.png" />
                   </image>
@@ -95,17 +80,10 @@
                      <Cursor fx:constant="DEFAULT" />
                   </cursor>
                   <effect>
-                     <Lighting diffuseConstant="2.0" specularConstant="0.0" specularExponent="0.0" surfaceScale="0.0">
-                        <bumpInput>
-                           <Shadow />
-                        </bumpInput>
-                        <light>
-                           <Light.Distant />
-                        </light>
-                     </Lighting>
+                     <DropShadow height="74.38" radius="31.502499999999998" width="53.63" />
                   </effect></ImageView>
             </children></AnchorPane>
-         <TextArea id="TextField" fx:id="mainTextBox" editable="false" layoutX="14.0" layoutY="14.0" mouseTransparent="true" prefHeight="137.0" prefWidth="900.0" styleClass="TextField" text="Hello Bob&#10;Tuesday&#10;Scheduled workout: Legs" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <TextArea id="TextField" fx:id="mainTextBox" editable="false" layoutY="463.0" mouseTransparent="true" prefHeight="137.0" prefWidth="900.0" styleClass="TextField" text="Hello guy&#10;Tuesday&#10;Scheduled workout: Legs" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="463.0">
             <cursor>
                <Cursor fx:constant="TEXT" />
             </cursor></TextArea>

@@ -14,7 +14,7 @@
                   <Font name="Calibri" size="28.0" />
                </font>
             </Label>
-             <Button layoutX="14.0" layoutY="481.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="Button" text="Complete selected" AnchorPane.leftAnchor="14.0">
+             <Button layoutX="14.0" layoutY="481.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="ButtonGreen" text="Complete selected" AnchorPane.leftAnchor="14.0">
                  <font>
                      <Font name="Arial" size="13.0" />
                  </font>

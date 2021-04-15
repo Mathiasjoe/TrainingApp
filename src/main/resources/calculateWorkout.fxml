@@ -2,32 +2,29 @@
 
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #202020;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
     <children>
-        <Button fx:id="calculatorButton" layoutX="11.0" layoutY="443.0" mnemonicParsing="false" onAction="#returnToMainScene" prefHeight="43.0" prefWidth="786.0" styleClass="Button" text="Home" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+        <Button fx:id="calculatorButton" layoutX="14.0" layoutY="405.0" mnemonicParsing="false" onAction="#returnToMainScene" prefHeight="43.0" prefWidth="786.0" styleClass="Button" text="Home" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="152.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="16.0">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Label layoutX="15.0" layoutY="6.0" prefHeight="82.0" prefWidth="854.0" text="Calculators" textFill="WHITE" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+        <Label layoutX="14.0" prefHeight="82.0" prefWidth="879.0" text="Calculators" textFill="WHITE" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
             <font>
                 <Font name="Calibri" size="38.0" />
             </font>
         </Label>
-        <Label layoutX="619.0" layoutY="111.0" prefHeight="512.0" prefWidth="232.0" styleClass="TextField" text="1 rm calculator can calculate your 1 repetition maximum, or in other words your heaviest single repetition lift in various exercises, based on how many repetition you can do on a certain weight." textFill="WHITE" wrapText="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-            <font>
-                <Font name="Fira Code Light" size="19.0" />
-            </font>
-        </Label>
-        <Label layoutX="25.0" layoutY="133.0" prefHeight="54.0" prefWidth="344.0" text="Benchpress calculator" textFill="WHITE" wrapText="true">
+        <Label layoutX="14.0" layoutY="63.0" prefHeight="54.0" prefWidth="344.0" text="Benchpress calculator" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="15.0">
             <font>
                 <Font name="JetBrains Mono Light" size="17.0" />
             </font>
         </Label>
-        <Button fx:id="switchToBenchPressButton" layoutX="25.0" layoutY="187.0" mnemonicParsing="false" onAction="#switchToBenchPressScene" prefHeight="43.0" prefWidth="427.0" styleClass="Button" text="Open bench press calculator">
+        <Button fx:id="switchToBenchPressButton" layoutX="14.0" layoutY="109.0" mnemonicParsing="false" onAction="#switchToBenchPressScene" prefHeight="43.0" prefWidth="427.0" styleClass="Button" text="Open bench press calculator" AnchorPane.leftAnchor="15.0">
             <font>
                 <Font name="JetBrains Mono Regular" size="12.0" />
             </font>
@@ -35,12 +32,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
         </Button>
-        <Label layoutX="25.0" layoutY="240.0" prefHeight="54.0" prefWidth="344.0" text="Future calculators if added:" textFill="WHITE" wrapText="true">
+        <Label layoutX="14.0" layoutY="152.0" prefHeight="54.0" prefWidth="344.0" text="Future calculators if added:" textFill="WHITE" wrapText="true" AnchorPane.leftAnchor="15.0">
             <font>
                 <Font name="JetBrains Mono Light" size="17.0" />
             </font>
         </Label>
-        <Button layoutX="25.0" layoutY="294.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="427.0" styleClass="Button" text="Open future calculator">
+        <Button layoutX="14.0" layoutY="198.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="427.0" styleClass="Button" text="Open future calculator" AnchorPane.leftAnchor="15.0">
             <font>
                 <Font name="JetBrains Mono Regular" size="12.0" />
             </font>
@@ -48,5 +45,19 @@
             <Cursor fx:constant="HAND" />
          </cursor>
         </Button>
+        <ImageView blendMode="ADD" fitHeight="283.0" fitWidth="280.0" layoutX="604.0" layoutY="63.0" opacity="0.81" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="63.0">
+            <image>
+                <Image url="@whitecalculator.png" />
+            </image>
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <effect>
+                <DropShadow height="74.38" radius="31.502499999999998" width="53.63" />
+            </effect></ImageView>
+        <TextArea id="TextField" fx:id="mainTextBox" editable="false" layoutX="1.0" layoutY="463.0" mouseTransparent="true" prefHeight="137.0" prefWidth="900.0" styleClass="TextField" text="1 rm calculator can calculate your 1 repetition maximum, or in other words your heaviest single repetition lift in various exercises, based on how many repetition you can do on a certain weight." wrapText="true" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="463.0">
+            <cursor>
+                <Cursor fx:constant="TEXT" />
+            </cursor></TextArea>
     </children>
 </AnchorPane>

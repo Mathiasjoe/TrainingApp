@@ -19,7 +19,7 @@
                 <Font name="Calibri Bold" size="28.0" />
             </font>
         </Label>
-        <TextArea layoutX="-1.0" layoutY="58.0" prefHeight="407.0" prefWidth="432.0" styleClass="TextField" text="Your workouts will appear here." AnchorPane.leftAnchor="15.0">
+        <TextArea editable="false" layoutX="-1.0" layoutY="58.0" prefHeight="344.0" prefWidth="432.0" promptText="Your workouts will appear here." styleClass="TextField" AnchorPane.leftAnchor="15.0">
          <opaqueInsets>
             <Insets />
          </opaqueInsets></TextArea>
@@ -50,13 +50,13 @@
                 <Font name="Calibri" size="16.0" />
             </font>
         </Label>
-        <Label layoutX="476.0" layoutY="320.0" prefHeight="27.0" prefWidth="176.0" text="Enter your weight:" textFill="WHITE">
+        <Label layoutX="476.0" layoutY="320.0" prefHeight="27.0" prefWidth="176.0" text="Enter weight used:" textFill="WHITE">
             <font>
                 <Font name="Calibri" size="16.0" />
             </font>
         </Label>
 
-        <Button layoutX="15.0" layoutY="478.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="ButtonGreen" text="Complete selected">
+        <Button layoutX="15.0" layoutY="430.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="ButtonGreen" text="Complete selected">
             <font>
                 <Font name="Arial" size="13.0" />
             </font>
@@ -64,7 +64,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
         </Button>
-        <Button layoutX="239.0" layoutY="478.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="ButtonRed" text="Delete selected">
+        <Button layoutX="237.0" layoutY="430.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="ButtonRed" text="Delete selected">
             <font>
                 <Font name="Jokerman" size="13.0" />
             </font>
