@@ -1,11 +1,11 @@
 package idata1002_2021_group11;
-
+/*
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
-
+*/
 /**
  * The class Json write test.
  */
@@ -15,7 +15,7 @@ class JsonWriteTest {
      *
      * @param filename the filename
      * @throws Exception the exception
-     */
+
     static void writeJsonSimpleDemo(String filename) throws Exception {
         // array that contains all workouts, add a new workout into here
         JSONArray workouts = new JSONArray();
@@ -84,4 +84,5 @@ class JsonWriteTest {
         // write to file
         Files.write(Paths.get(filename), workouts.toJSONString().getBytes());
     }
+*/
 }

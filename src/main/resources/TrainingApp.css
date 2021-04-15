@@ -1,0 +1,39 @@
+.root {
+   -fx-font-weight: bold;
+   -fx-font-family: Calibri;
+}
+
+.Button {
+    -fx-font-size: 10pt;
+    -fx-background-color: #5a85a3;
+    -fx-text-fill: white;
+}
+
+.ButtonRed {
+    -fx-font-size: 10pt;
+    -fx-background-color: #854249;
+    -fx-text-fill: white;
+}
+
+.ButtonGreen {
+    -fx-font-size: 10pt;
+    -fx-background-color: #73679e;
+    -fx-text-fill: white;
+}
+
+.Button:pressed {
+    -fx-padding: 10 10 10 10;
+}
+
+.TextField {
+    -fx-background-color: #363636;
+    -fx-border-color: #363636;
+    -fx-border-width: 15px;
+    -fx-border-radius: 20px;
+    -fx-text-fill:white;
+}
+
+.TextField .content {
+    -fx-background-color: #363636;
+    -fx-border-color: #363636;
+}
