@@ -5,9 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 /**
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -32,7 +30,7 @@ public class App extends Application {
     stage.setTitle("Training app");
     //stage.initStyle(StageStyle.UNDECORATED);
     stage.getIcons().add(new Image("posing.png"));
-    scene.getStylesheets().add("TrainingApp.css");
+    scene.getStylesheets().add("trainingApp.css");
     stage.setScene(scene);
     stage.show();
   }

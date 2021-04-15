@@ -60,21 +60,21 @@
                </Button>
                <ImageView blendMode="ADD" fitHeight="287.0" fitWidth="280.0" layoutX="10.0" layoutY="6.0" opacity="0.73" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                   <image>
-                     <Image url="@whitelifting.png" />
+                     <Image url="/whitelifting.png" />
                   </image>
                   <effect>
                      <DropShadow height="89.2" radius="34.4625" width="50.65" />
                   </effect></ImageView>
                <ImageView blendMode="ADD" fitHeight="264.0" fitWidth="274.0" layoutX="311.0" opacity="0.83" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                   <image>
-                     <Image url="@whiteposing.png" />
+                     <Image url="/whiteposing.png" />
                   </image>
                   <effect>
                      <DropShadow height="91.91" radius="38.0425" width="62.26" />
                   </effect></ImageView>
                <ImageView blendMode="ADD" fitHeight="313.0" fitWidth="280.0" layoutX="605.0" layoutY="1.0" opacity="0.81" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
                   <image>
-                     <Image url="@whitecalculator.png" />
+                     <Image url="/whitecalculator.png" />
                   </image>
                   <cursor>
                      <Cursor fx:constant="DEFAULT" />
