@@ -4,27 +4,31 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 /**
- * The class Exercise.
+ * The class Exercise represents a single exercise. Initially,
+ * the exercise has no sets, these will be added later once the user creates a workout.
+ * The exercise also has a field maxLift, that is initially 0, but can be set later.
  */
 public class Exercise {
 
     private String name;
 
-    private ArrayList<Set> sets;
+    private ArrayList<Set> sets = new ArrayList<>();
 
-    private int maxLift;
+    private float maxLift = 0;
 
     private int order;
 
     /**
      * Instantiates a new Exercise.
-     * When the user first creates an exercise he sets the name. Then he adds sets according to how many sets he chooses to have
+     * The name of the exercise will be set.
      *
-     * @param name the name
+     * @param name The name of the exercise.
      */
     public Exercise(String name) {
-        if(name.isBlank()) {
-            this.name = "No name";
+        if(name == null) {
+            throw new IllegalArgumentException("Name cannot be null");
+        } else if(name.isBlank()) {
+            throw new IllegalArgumentException("Name cannot be blank");
         } else {
             this.name = name;
         }
@@ -46,18 +50,20 @@ public class Exercise {
      *
      * @return The max lift
      */
-    public int getMaxLift() {
+    public float getMaxLift() {
         return maxLift;
     }
 
     /**
-     * Edit exercise.
+     * Edits the exercise name.
      *
-     * @param name the name
+     * @param name The new name of the exercise.
      */
     public void editExercise(String name) {
-        if(this.name.isBlank()) {
-            this.name = "No name";
+        if(name == null) {
+            throw new IllegalArgumentException(("Name can't be null"));
+        } else if (name.isBlank()) {
+            throw new IllegalArgumentException("Name cannot be blank");
         } else {
             this.name = name;
         }
@@ -65,46 +71,60 @@ public class Exercise {
 
 
     /**
-     * Add set.
+     * Adds a set to the exercise.
      *
-     * @param set the set
+     * @param set The new set to be added to the exercise.
      */
     public void addSet(Set set) {
-        if(set != null) {
+        if(set == null) {
+            throw new IllegalArgumentException("Set can't be null");
+        } else {
             this.sets.add(set);
         }
     }
 
     /**
-     * Remove set.
+     * Removes a set of the exercise.
      *
-     * @param set the set
+     * @param set The set to be removed.
      */
     public void removeSet(Set set) {
-        if(this.sets.contains(set)) {
+        if(set == null) {
+            throw new IllegalArgumentException("Set cannot be null.");
+        } else if(this.sets.contains(set)) {
             this.sets.remove(set);
+        } else {
+            throw new IllegalArgumentException("Set does not exist");
         }
     }
 
     /**
-     * Edit set.
+     * Edits a set in the exercise.
      *
-     * @param set         the set
-     * @param weight      the weight
-     * @param repetitions the repetitions
+     * @param set         The set to be edited.
+     * @param weight      The new weight of the set.
+     * @param repetitions The new repetitions of the set.
      */
     public void editSet(Set set, float weight, int repetitions) {
-        Iterator<Set> it = sets.iterator();
         boolean isRunning = true;
 
-        while(isRunning && it.hasNext() ) {
-            Set element = it.next();
-            if(element.equals(set)) {
-                element.setRepetitions(repetitions);
-                element.setWeight(weight);
-                isRunning = false;
+        if (set == null) {
+            throw new IllegalArgumentException("Set cannot be null.");
+        } else if (repetitions <= 0) {
+            throw new IllegalArgumentException("Repetitions of a set cannot be lesser or equal to 0.");
+        } else if (this.sets.contains(set)) {
+            Iterator<Set> it = sets.iterator();
+            while(isRunning && it.hasNext() ) {
+                Set element = it.next();
+                if(element.equals(set)) {
+                    element.setRepetitions(repetitions);
+                    element.setWeight(weight);
+                    isRunning = false;
+                }
 
             }
+        } else {
+            throw new IllegalArgumentException("The set does not exist in this exercise.");
         }
     }
 
@@ -114,8 +134,10 @@ public class Exercise {
      * @param order the order
      */
     public void setOrder(int order) {
-        if(order >= 0) {
+        if(order > 0) {
             this.order = order;
+        } else {
+            throw new IllegalArgumentException("Order cannot be a negative number");
         }
     }
 
@@ -124,7 +146,7 @@ public class Exercise {
      *
      * @param maxLift The max lift
      */
-    public void setMaxLift(int maxLift) {
+    public void setMaxLift(float maxLift) {
         if (maxLift > 0) {
             this.maxLift = maxLift;
         } else {
