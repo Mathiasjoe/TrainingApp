@@ -1,7 +1,7 @@
 package idata1002_2021_group11;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -12,7 +12,7 @@ public class TestExercise {
     private Set set;
     private Exercise testExercise;
 
-    @Before
+    @BeforeEach
     public void initTests() {
         set = new Set(50, 10);
         testExercise = new Exercise("bench");
