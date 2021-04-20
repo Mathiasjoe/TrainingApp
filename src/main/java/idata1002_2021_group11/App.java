@@ -30,7 +30,7 @@ public class App extends Application {
     stage.setTitle("Training app");
     //stage.initStyle(StageStyle.UNDECORATED);
     stage.getIcons().add(new Image("posing.png"));
-    scene.getStylesheets().add("TrainingApp.css");
+    scene.getStylesheets().add("trainingApp.css");
     stage.setScene(scene);
     stage.show();
   }

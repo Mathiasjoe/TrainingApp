@@ -7,14 +7,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.util.Pair;
 
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.ResourceBundle;
 
 public class Controller  {
   public Button createWorkoutButton;
@@ -55,7 +52,7 @@ public class Controller  {
 
     Stage createWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-    root.getStylesheets().add("TrainingApp.css");
+    root.getStylesheets().add("trainingApp.css");
     createWindow.setScene(createWorkOutScene);
     createWindow.show();
   }
@@ -77,7 +74,7 @@ public class Controller  {
     Scene createPremadeWorkoutScene = new Scene(root);
     Stage createPremadeWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-    root.getStylesheets().add("TrainingApp.css");
+    root.getStylesheets().add("trainingApp.css");
     createPremadeWindow.setScene(createPremadeWorkoutScene);
     createPremadeWindow.show();
   }
@@ -99,7 +96,7 @@ public class Controller  {
     Scene createCalculatorScene = new Scene(root);
     Stage createCalculatorWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-    root.getStylesheets().add("TrainingApp.css");
+    root.getStylesheets().add("trainingApp.css");
     createCalculatorWindow.setScene(createCalculatorScene);
     createCalculatorWindow.show();
   }
@@ -109,7 +106,7 @@ public class Controller  {
    *
    * @param event
    * @throws IOException
-   */
+
   @FXML
   public void switchToCalculateBenchPress(ActionEvent event) throws IOException {
     URL createCalculateBenchPress = getClass().getClassLoader().getResource("legg til her Framtidig FXML scene navn.fxml");
@@ -123,7 +120,7 @@ public class Controller  {
     createCalculateBenchPressWindow.setScene(createCalculatorBenchPressScene);
     createCalculateBenchPressWindow.show();
   }
-
+**/
   /**
    * Returns to the main menu scene.
    *
@@ -140,39 +137,9 @@ public class Controller  {
     Scene createReturnMainMenuScene = new Scene(root);
     Stage createReturnMainMenuWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-    root.getStylesheets().add("TrainingApp.css");
+    root.getStylesheets().add("trainingApp.css");
     createReturnMainMenuWindow.setScene(createReturnMainMenuScene);
     createReturnMainMenuWindow.show();
 
   }
-
-  /**
-   * Switches to the calculate bench press scene.
-   *
-   * @param event
-   * @throws IOException
-   */
-  @FXML public void switchToBenchPressScene(ActionEvent event) throws IOException
-  {
-    URL createBenchPress = getClass().getClassLoader().getResource("calculateBenchpress.fxml");
-
-    assert createBenchPress != null;
-    Parent root = FXMLLoader.load(createBenchPress);
-
-    Scene createBenchPressScene = new Scene(root);
-    Stage createBenchPressWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-    root.getStylesheets().add("TrainingApp.css");
-    createBenchPressWindow.setScene(createBenchPressScene);
-    createBenchPressWindow.show();
-
-  }
-
-
-
-
-
-
-
-
 }
