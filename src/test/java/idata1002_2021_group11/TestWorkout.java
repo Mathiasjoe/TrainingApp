@@ -69,7 +69,7 @@ public class TestWorkout {
         LocalDate date = LocalDate.now();
         try {
             Workout workout =  new Workout("Legs", "Badass workout", date);
-            workout.addExercise(new Exercise("Legs"));
+            workout.addExercise(new Exercise("Legs", 22, 22, 22));
 
             assertEquals(1, workout.getExercises().size());
         } catch (IllegalArgumentException e) {

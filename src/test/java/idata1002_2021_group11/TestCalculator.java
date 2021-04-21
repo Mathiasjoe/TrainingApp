@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestCalculator {
 
-    private Exercise exercise = new Exercise("Benkpress");
+    private Exercise exercise = new Exercise("Benkpress", 22 ,22,22);
     private Calculator calculator = new Calculator();
 
     @DisplayName("Test the calculateAndSetMax method with correct arguments.")

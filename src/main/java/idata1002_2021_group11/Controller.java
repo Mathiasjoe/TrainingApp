@@ -38,7 +38,27 @@ public class Controller{
     /**
      * The Main text box.
      */
-    public TextArea mainTextBox;
+
+
+  @FXML
+  private TableColumn workoutColum;
+  @FXML
+  private TableColumn setsColum;
+  @FXML
+  private TableColumn repsColum;
+  @FXML
+  private TableColumn weightColum;
+  @FXML
+  private TableView viewWorkout;
+
+ @FXML
+ private TextField enterRepsField;
+  @FXML
+  private TextField enterWeightField;
+ @FXML
+ private TextField enterSetsField;
+ @FXML
+ private TextField enterWorkoutField;
 
   private Set set;
   private Exercise exercise;
@@ -50,9 +70,7 @@ public class Controller{
      */
     public Controller()
  {
-   this.set = new Set(80, 1);
-   this.exercise = new Exercise("Ultimate workout edition");
-   this.workout = new Workout("Nice", "Nice", LocalDate.now());
+  
  }
 
 
@@ -165,7 +183,37 @@ public class Controller{
 
   }
 
+  @FXML
+  public void addWorkoutToList(ActionEvent event)
+  {
 
+    this.workoutColum.setCellValueFactory(new PropertyValueFactory<>("workoutName"));
+    this.setsColum.setCellValueFactory(new PropertyValueFactory<>("sets"));
+    this.repsColum.setCellValueFactory(new PropertyValueFactory<>("reps"));
+    this.weightColum.setCellValueFactory(new PropertyValueFactory<>("weight"));
+
+
+    viewWorkout.getItems().add(new Exercise(enterWorkoutField.getText(),
+        Integer.parseInt(enterSetsField.getText()),
+        Integer.parseInt(enterRepsField.getText()),
+        Integer.parseInt(enterWeightField.getText())));
+
+
+    enterWorkoutField.clear();
+    enterSetsField.clear();
+    enterRepsField.clear();
+    enterWeightField.clear();
+
+    viewWorkout.refresh();
+
+  }
+
+  @FXML
+  public void removeWorkoutFromList(ActionEvent event)
+  {
+    viewWorkout.getItems().removeAll(viewWorkout.getSelectionModel().getSelectedItem());
+    viewWorkout.refresh();
+  }
 
 
 }

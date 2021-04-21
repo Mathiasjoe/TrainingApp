@@ -15,7 +15,7 @@ public class TestExercise {
     @BeforeEach
     public void initTests() {
         set = new Set(50, 10);
-        testExercise = new Exercise("bench");
+        testExercise = new Exercise("bench", 22, 22, 22);
         testExercise.addSet(set);
     }
 
@@ -23,7 +23,7 @@ public class TestExercise {
     @Test
     public void testSuccessfulCreationOfExercise() {
         try {
-            Exercise exercise = new Exercise("squat");
+            Exercise exercise = new Exercise("squat",22 ,22, 22);
             assert true;
         } catch (IllegalArgumentException iae) {
             fail("Exception not expected.");
@@ -34,7 +34,7 @@ public class TestExercise {
     @Test
     public void testUnsuccessfulCreationOfExercise() {
         try {
-            Exercise exercise = new Exercise(null);
+            Exercise exercise = new Exercise(null, 0,0,0);
             fail("Expected exception.");
         } catch (IllegalArgumentException iae) {
             assert true;
@@ -46,7 +46,7 @@ public class TestExercise {
     public void testEditExerciseSuccessfully() {
         try {
             testExercise.editExercise("squat");
-            assertEquals("squat", testExercise.getName());
+            assertEquals("squat", testExercise.getWorkoutName());
         } catch (IllegalArgumentException iae) {
             fail("Exception not expected.");
         }
