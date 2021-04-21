@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #202020;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.PremadeWorkoutController">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #202020;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.PremadeWorkoutController">
    <children>
       <AnchorPane layoutY="-1.0" prefHeight="547.0" prefWidth="900.0">
          <children>
@@ -28,9 +24,9 @@
                  </cursor>
              </Button>
          </children></AnchorPane>
-      <HBox layoutX="-1.0" layoutY="67.0" prefHeight="446.0" prefWidth="900.0">
+      <HBox layoutX="-1.0" layoutY="67.0" prefHeight="446.0" prefWidth="886.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <TableView fx:id="tableView" prefHeight="446.0" prefWidth="899.0">
+            <TableView id="TableView" fx:id="tableView" prefHeight="446.0" prefWidth="884.0" styleClass="TableView">
               <columns>
                 <TableColumn fx:id="exerciseColumn" prefWidth="343.0" text="EXERCISE" />
                 <TableColumn fx:id="descriptionColumn" prefWidth="535.0" text="DESCRIPTION" />

@@ -65,10 +65,7 @@ public class Controller{
   private Workout workout;
 
 
-    /**
-     * Instantiates a new Controller.
-     */
-    public Controller()
+ public Controller()
  {
   
  }

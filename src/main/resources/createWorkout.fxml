@@ -73,14 +73,14 @@
                 <Font name="Calibri" size="16.0" />
             </font>
         </Label>
-        <HBox layoutX="5.0" layoutY="55.0" prefHeight="416.0" prefWidth="468.0">
+        <HBox layoutX="15.0" layoutY="56.0" prefHeight="407.0" prefWidth="438.0">
             <children>
-                <TableView fx:id="viewWorkout" editable="true" prefHeight="416.0" prefWidth="468.0">
+                <TableView fx:id="viewWorkout" editable="true" prefHeight="405.0" prefWidth="434.0" styleClass="TableView">
                     <columns>
-                        <TableColumn fx:id="workoutColum" prefWidth="147.0" sortable="false" text="Workout" />
-                        <TableColumn fx:id="setsColum" prefWidth="79.0" sortable="false" text="Sets" />
-                        <TableColumn fx:id="repsColum" prefWidth="121.0" sortable="false" text="Reps" />
-                        <TableColumn fx:id="weightColum" prefWidth="81.0" sortable="false" text="Weight" />
+                        <TableColumn fx:id="workoutColum" prefWidth="139.0" sortable="false" text="Workout" />
+                        <TableColumn fx:id="setsColum" prefWidth="87.0" sortable="false" text="Sets" />
+                        <TableColumn fx:id="repsColum" prefWidth="84.0" sortable="false" text="Reps" />
+                        <TableColumn fx:id="weightColum" prefWidth="123.0" sortable="false" text="Weight" />
                     </columns></TableView>
             </children>
         </HBox>

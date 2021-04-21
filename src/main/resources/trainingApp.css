@@ -37,3 +37,42 @@
     -fx-background-color: #363636;
     -fx-border-color: #363636;
 }
+
+.TableView {
+    -fx-background-color: #363636;
+    -fx-text-fill: white;
+}
+
+.TableView .table-cell {
+    -fx-text-fill: white;
+}
+
+.TableView .column-header {
+    -fx-background-color: #363636;
+}
+
+.TableView .column-header-background .label{
+    -fx-background-color: #363636;
+    -fx-text-fill: white;
+}
+
+
+.table-row-cell {
+    -fx-background-color: #363636;
+    -fx-table-cell-border-color: transparent;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #393939;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #73679e;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+
+
