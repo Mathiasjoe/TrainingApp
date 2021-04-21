@@ -33,9 +33,6 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.5</version>
                 <configuration>
-                    <release>${maven.compiler.target}</release>
-                    <jlinkImageName>CardGame</jlinkImageName>
-                    <launcher>Cardgame</launcher>
                     <mainClass>idata1002_2021_group11.App</mainClass>
                 </configuration>
             </plugin>

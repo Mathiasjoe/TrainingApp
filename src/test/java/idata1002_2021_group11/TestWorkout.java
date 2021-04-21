@@ -1,5 +1,6 @@
 package idata1002_2021_group11;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
@@ -9,11 +10,18 @@ import java.time.LocalDate;
 
 public class TestWorkout {
 
+    private LocalDate date;
+    private Workout workout;
+
+    @BeforeEach
+    public void initTests() {
+        date = LocalDate.now();
+        workout = new Workout("Legs", "Badass workout", date);
+    }
 
     @DisplayName("Test the creation of an Workout object with valid argument.")
     @Test
     public void successfullyAddWorkoutTest() {
-        LocalDate date = LocalDate.now();
         try {
             new Workout("Legs", "Badass workout", date);
             assert true;
@@ -24,7 +32,6 @@ public class TestWorkout {
     @DisplayName("Test the creation of an Workout object with invalid argument.")
     @Test
     public void unSuccessfullyAddWorkoutTest() {
-        LocalDate date = LocalDate.now();
         try {
             new Workout( null, "null", null);
             fail("Expected an exception to be thrown");
@@ -36,10 +43,7 @@ public class TestWorkout {
     @DisplayName("Test to add rating ut with valid arguments")
     @Test
     public void successfullyAddRating() {
-        LocalDate date = LocalDate.now();
-
         try {
-            Workout workout =  new Workout("Legs", "Badass workout", date);
             workout.setRating(2);
             assert true;
         } catch (IllegalArgumentException e) {
@@ -51,10 +55,7 @@ public class TestWorkout {
     @DisplayName("Test to add rating ut with invalid arguments")
     @Test
     public void unSuccessfullyAddRating() {
-        LocalDate date = LocalDate.now();
-
         try {
-            Workout workout =  new Workout("Legs", "Badass workout", date);
             workout.setRating(-1);
             fail("Should not be possible to set a negative rating");
         } catch (IllegalArgumentException e) {
@@ -66,9 +67,7 @@ public class TestWorkout {
     @DisplayName("Test to add exercise with valid arguments")
     @Test
     public void successfullyAddExercise() {
-        LocalDate date = LocalDate.now();
         try {
-            Workout workout =  new Workout("Legs", "Badass workout", date);
             workout.addExercise(new Exercise("Legs", 22, 22, 22));
 
             assertEquals(1, workout.getExercises().size());
@@ -81,9 +80,7 @@ public class TestWorkout {
     @DisplayName("Test to add exercise with invalid arguments")
     @Test
     public void unSuccessfullyAddExercise() {
-        LocalDate date = LocalDate.now();
         try {
-            Workout workout =  new Workout("Legs", "Badass workout", date);
             workout.addExercise(null);
 
             fail("Exception was expected");
@@ -95,10 +92,7 @@ public class TestWorkout {
     @DisplayName("Tests the getters in the workout class")
     @Test
     public void successfullyGetWorkoutTest() {
-        LocalDate date = LocalDate.now();
         try {
-            Workout workout = new Workout("Legs", "Badass workout", date);
-
             workout.setRating(5);
 
             assertEquals("Legs", workout.getWorkoutName());

@@ -1,5 +1,6 @@
 package idata1002_2021_group11;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
@@ -8,8 +9,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestCalculator {
 
-    private Exercise exercise = new Exercise("Benkpress", 22 ,22,22);
-    private Calculator calculator = new Calculator();
+    private Exercise exercise;
+    private Calculator calculator;
+
+    @BeforeEach
+    public void initTests() {
+        exercise = new Exercise("Benkpress", 22 ,22,22);
+        calculator = new Calculator();
+    }
 
     @DisplayName("Test the calculateAndSetMax method with correct arguments.")
     @Test
