@@ -1,30 +1,54 @@
 package idata1002_2021_group11;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
-public class Controller  {
-  public Button createWorkoutButton;
-  public Button premadeWorkoutButton;
-  public Button calculatorButton;
-  public TextArea mainTextBox;
+/**
+ * The type Controller.
+ */
+public class Controller{
+    /**
+     * The Create workout button.
+     */
+    public Button createWorkoutButton;
+    /**
+     * The Premade workout button.
+     */
+    public Button premadeWorkoutButton;
+    /**
+     * The Calculator button.
+     */
+    public Button calculatorButton;
+    /**
+     * The Main text box.
+     */
+    public TextArea mainTextBox;
 
   private Set set;
   private Exercise exercise;
   private Workout workout;
 
 
- public Controller()
+    /**
+     * Instantiates a new Controller.
+     */
+    public Controller()
  {
    this.set = new Set(80, 1);
    this.exercise = new Exercise("Ultimate workout edition");
@@ -32,15 +56,13 @@ public class Controller  {
  }
 
 
-  /**
-   * Switches to the create workout scene
-   *
-   * @param event
-   * @throws IOException
-   */
-
-
-  @FXML
+    /**
+     * Switches to the create workout scene
+     *
+     * @param event the event
+     * @throws IOException the io exception
+     */
+    @FXML
   public void switchToCreateWorkoutButton(ActionEvent event) throws IOException {
     URL createWorkOut = getClass().getClassLoader()
         .getResource("createWorkout.fxml");
@@ -57,13 +79,13 @@ public class Controller  {
     createWindow.show();
   }
 
-  /**
-   * Switches to the Premade workout scene.
-   *
-   * @param event
-   * @throws IOException
-   */
-  @FXML
+    /**
+     * Switches to the Premade workout scene.
+     *
+     * @param event the event
+     * @throws IOException the io exception
+     */
+    @FXML
   public void switchToPremadeWorkoutButton(ActionEvent event) throws IOException {
 
     URL createPremadeWorkout = getClass().getClassLoader().getResource("premadeWorkout.fxml");
@@ -79,13 +101,13 @@ public class Controller  {
     createPremadeWindow.show();
   }
 
-  /**
-   * Switches to the calculator scene.
-   *
-   * @param event
-   * @throws IOException
-   */
-  @FXML
+    /**
+     * Switches to the calculator scene.
+     *
+     * @param event the event
+     * @throws IOException the io exception
+     */
+    @FXML
   public void openCalculatorButton(ActionEvent event) throws IOException {
 
     URL createCalculator = getClass().getClassLoader().getResource("calculateWorkout.fxml");
@@ -121,13 +143,13 @@ public class Controller  {
     createCalculateBenchPressWindow.show();
   }
 **/
-  /**
-   * Returns to the main menu scene.
-   *
-   * @param event
-   * @throws IOException
-   */
-  @FXML public void returnToMainScene(ActionEvent event) throws IOException
+    /**
+     * Returns to the main menu scene.
+     *
+     * @param event the event
+     * @throws IOException the io exception
+     */
+    @FXML public void returnToMainScene(ActionEvent event) throws IOException
   {
     URL createReturnMainMenu = getClass().getClassLoader().getResource("application.fxml");
 
@@ -142,4 +164,8 @@ public class Controller  {
     createReturnMainMenuWindow.show();
 
   }
+
+
+
+
 }
