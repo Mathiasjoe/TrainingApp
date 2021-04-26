@@ -26,7 +26,7 @@
         <TextField fx:id="enterWorkoutField" layoutX="476.0" layoutY="118.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
         <TextField fx:id="enterSetsField" layoutX="476.0" layoutY="191.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
         <TextField fx:id="enterWeightField" layoutX="476.0" layoutY="347.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
-        <Button  layoutX="478.0" layoutY="430.0" mnemonicParsing="false" onAction="#addWorkoutToList" prefHeight="35.0" prefWidth="402.0" styleClass="ButtonGreen" text="addExercise">
+        <Button layoutX="478.0" layoutY="430.0" mnemonicParsing="false" onAction="#addWorkoutToList" prefHeight="35.0" prefWidth="402.0" styleClass="ButtonGreen" text="addExercise">
             <font>
                 <Font name="Jokerman" size="13.0" />
             </font>
@@ -51,7 +51,7 @@
             </font>
         </Label>
 
-        <Button fx:id="selectWorkOutButton" layoutX="15.0" layoutY="478.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="ButtonGreen" text="Complete selected">
+        <Button fx:id="selectWorkOutButton" layoutX="15.0" layoutY="478.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="ButtonGreen" text="Toggle completed" onAction="#setCompleted">
             <font>
                 <Font name="Arial" size="13.0" />
             </font>
@@ -78,9 +78,10 @@
                 <TableView fx:id="viewWorkout" editable="true" prefHeight="405.0" prefWidth="434.0" styleClass="TableView">
                     <columns>
                         <TableColumn fx:id="workoutColum" prefWidth="139.0" sortable="false" text="Workout" />
-                        <TableColumn fx:id="setsColum" prefWidth="87.0" sortable="false" text="Sets" />
-                        <TableColumn fx:id="repsColum" prefWidth="84.0" sortable="false" text="Reps" />
-                        <TableColumn fx:id="weightColum" prefWidth="123.0" sortable="false" text="Weight" />
+                        <TableColumn fx:id="setsColum" prefWidth="73.0" sortable="false" text="Sets" />
+                        <TableColumn fx:id="repsColum" prefWidth="66.0" sortable="false" text="Reps" />
+                        <TableColumn fx:id="weightColum" prefWidth="64.0" sortable="false" text="Weight" />
+                  <TableColumn fx:id="isCompletedColumn" prefWidth="100.0" sortable="false" text="Completed" />
                     </columns></TableView>
             </children>
         </HBox>
