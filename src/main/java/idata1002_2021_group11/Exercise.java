@@ -14,6 +14,7 @@ public class Exercise implements java.io.Serializable {
     private int sets; // The number of sets in a workout
     private int reps; // The number of repetitions in a set
     private int weight; // The weight to be lifted in the workout exercise
+    private boolean isCompleted;
 
 
     private ArrayList<Set> setse = new ArrayList<>(); // The list of sets
@@ -35,6 +36,7 @@ public class Exercise implements java.io.Serializable {
         this.sets = sets;
         this.reps = reps;
         this.weight = weight;
+        isCompleted = false;
 
     }
 
@@ -155,6 +157,21 @@ public class Exercise implements java.io.Serializable {
         } else {
             this.setse.add(set);
         }
+    }
+    /**
+     * Sets exercise to completed.
+     *
+     */
+    public void setCompleted(boolean value) {
+        this.isCompleted = value;
+    }
+
+    /**
+     *
+     * @return isCompleted
+     */
+    public boolean getIsCompleted() {
+        return this.isCompleted;
     }
 
     /**
