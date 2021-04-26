@@ -4,7 +4,7 @@ package idata1002_2021_group11;
  * The class Set represents a single set of an exercise.
  * It consists of weight and repetitions.
  */
-public class Set {
+public class Set implements java.io.Serializable {
     private double weight;
     private int repetitions;
 

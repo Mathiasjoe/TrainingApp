@@ -84,5 +84,6 @@
                     </columns></TableView>
             </children>
         </HBox>
+      <Button layoutX="247.0" layoutY="18.0" mnemonicParsing="false" text="load data" onAction="#loadData"/>
     </children>
 </AnchorPane>

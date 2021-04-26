@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * The Workout class represents a list of exercises.
  * The workout has a name, a description and a date.
  */
-public class Workout {
+public class Workout implements java.io.Serializable {
 
     private String name;
     private String description;

@@ -1,11 +1,12 @@
 package idata1002_2021_group11;
 
+import java.io.*;
 import java.util.ArrayList;
 
 /**
  * The class WorkoutCollection represents a collection of workouts.
  */
-public class WorkoutCollection {
+public class WorkoutCollection implements java.io.Serializable {
     private ArrayList<Workout> workouts;
 
 
@@ -13,7 +14,27 @@ public class WorkoutCollection {
      * Instantiates a new Workout collection.
      */
     public WorkoutCollection() {
+
+        /// Read from file
         this.workouts = new ArrayList<>();
+
+        ArrayList<Workout> e = null;
+        try {
+          FileInputStream fileIn = new FileInputStream("workoutCollection.ser");
+          ObjectInputStream in = new ObjectInputStream(fileIn);
+          e = (ArrayList<Workout>) in.readObject();
+          in.close();
+          fileIn.close();
+        } catch (IOException i) {
+          i.printStackTrace();
+          return;
+        } catch (ClassNotFoundException c) {
+          System.out.println("Employee class not found");
+          c.printStackTrace();
+          return;
+        }
+        this.workouts.addAll(e);
+
     }
 
     /**
@@ -26,6 +47,21 @@ public class WorkoutCollection {
             throw new IllegalArgumentException("workout can't be null");
         }
         workouts.add(workout);
+        updateFile();
+    }
+
+    public void updateFile() {
+        try {
+          FileOutputStream fileOut = new FileOutputStream("workoutCollection.ser");
+          ObjectOutputStream out = new ObjectOutputStream(fileOut);
+          out.writeObject(this.workouts);
+          out.close();
+          fileOut.close();
+          System.out.print("Serialized data is saved in workoutCollection.ser");
+        } catch (IOException i) {
+          i.printStackTrace();
+        }
+
     }
 
     /**
@@ -35,7 +71,9 @@ public class WorkoutCollection {
      */
     public void removeWorkout(Workout workout) {
         if(this.workouts.contains(workout)) {
+            System.out.println("here baby");
             this.workouts.remove(workout);
+            updateFile();
         } else {
             throw new IllegalArgumentException("Workout does not exist");
         }
