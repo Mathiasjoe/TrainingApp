@@ -77,11 +77,11 @@
             <children>
                 <TableView fx:id="viewWorkout" editable="true" prefHeight="407.0" prefWidth="445.0" styleClass="TableView">
                     <columns>
-                        <TableColumn fx:id="workoutColum" prefWidth="105.0" sortable="false" text="Workout" />
-                        <TableColumn fx:id="setsColum" prefWidth="68.0" sortable="false" text="Sets" />
-                        <TableColumn fx:id="repsColum" prefWidth="79.0" sortable="false" text="Reps" />
-                        <TableColumn fx:id="weightColum" prefWidth="68.0" sortable="false" text="Weight" />
-                  <TableColumn fx:id="isCompletedColumn" prefWidth="124.0" sortable="false" text="Completed" />
+                        <TableColumn fx:id="workoutColum" editable="false" prefWidth="181.0" sortable="false" text="Workout" />
+                        <TableColumn fx:id="setsColum" editable="false" prefWidth="52.0" sortable="false" text="Sets" />
+                        <TableColumn fx:id="repsColum" editable="false" prefWidth="57.0" sortable="false" text="Reps" />
+                        <TableColumn fx:id="weightColum" editable="false" prefWidth="60.0" sortable="false" text="Weight" />
+                  <TableColumn fx:id="isCompletedColumn" editable="false" prefWidth="93.0" sortable="false" text="Completed" />
                     </columns></TableView>
             </children>
         </HBox>

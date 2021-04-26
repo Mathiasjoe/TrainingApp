@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -149,6 +150,12 @@ public class ViewWorkoutsController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setHeaderText("Insufficient input");
             alert.setContentText("Input fields can not be empty.\n \nSets, reps and weight must be a number.");
+
+            //Styling
+            DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStylesheets().add("trainingApp.css");;
+            dialogPane.getStyleClass().add("customDialog");
+
             alert.showAndWait();
 
         }
