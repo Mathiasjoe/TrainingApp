@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -130,16 +131,22 @@ public class ViewWorkoutsController implements Initializable {
         this.repsColum.setCellValueFactory(new PropertyValueFactory<>("reps"));
         this.weightColum.setCellValueFactory(new PropertyValueFactory<>("weight"));
 
-        Exercise exercise = new Exercise(enterWorkoutField.getText(),
-                Integer.parseInt(enterSetsField.getText()),
-                Integer.parseInt(enterRepsField.getText()),
-                Integer.parseInt(enterWeightField.getText()));
+        try {
+            Exercise exercise = new Exercise(enterWorkoutField.getText(),
+                    Integer.parseInt(enterSetsField.getText()),
+                    Integer.parseInt(enterRepsField.getText()),
+                    Integer.parseInt(enterWeightField.getText()));
 
-        viewWorkout.getItems().add(exercise);
+            viewWorkout.getItems().add(exercise);
 
-        Workout workout = new Workout(enterWorkoutField.getText(), "", LocalDate.now());
-        workout.addExercise(exercise);
-        this.collection.newWorkout(workout);
+            Workout workout = new Workout(enterWorkoutField.getText(), "", LocalDate.now());
+            workout.addExercise(exercise);
+            this.collection.newWorkout(workout);
+        } catch (NumberFormatException numberFormatException) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.showAndWait();
+
+        }
 
 
         enterWorkoutField.clear();
