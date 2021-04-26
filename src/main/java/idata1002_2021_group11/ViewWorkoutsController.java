@@ -7,11 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -151,6 +147,8 @@ public class ViewWorkoutsController implements Initializable {
             this.collection.newWorkout(workout);
         } catch (NumberFormatException numberFormatException) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("Insufficient input");
+            alert.setContentText("Input fields can not be empty.\n \nSets, reps and weight must be a number.");
             alert.showAndWait();
 
         }
@@ -192,6 +190,7 @@ public class ViewWorkoutsController implements Initializable {
         this.collection.updateFile();
         viewWorkout.refresh();
     }
+
 
 
 }
