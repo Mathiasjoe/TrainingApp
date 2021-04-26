@@ -24,9 +24,9 @@
             </font>
         </Label>
         <TextField fx:id="enterWorkoutField" layoutX="476.0" layoutY="118.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
-        <TextField fx:id="enterSetsField" layoutX="476.0" layoutY="191.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
-        <TextField fx:id="enterWeightField" layoutX="476.0" layoutY="347.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
-        <Button  layoutX="478.0" layoutY="430.0" mnemonicParsing="false" onAction="#addWorkoutToList" prefHeight="35.0" prefWidth="402.0" styleClass="ButtonGreen" text="addExercise">
+        <TextField fx:id="enterSetsField" layoutX="476.0" layoutY="191.0" prefHeight="35.0" prefWidth="402.0" promptText="SETS" styleClass="TextField" />
+        <TextField fx:id="enterWeightField" layoutX="476.0" layoutY="347.0" prefHeight="35.0" prefWidth="402.0" promptText="WEIGHT" styleClass="TextField" />
+        <Button layoutX="478.0" layoutY="430.0" mnemonicParsing="false" onAction="#addWorkoutToList" prefHeight="35.0" prefWidth="402.0" styleClass="ButtonGreen" text="addExercise">
             <font>
                 <Font name="Jokerman" size="13.0" />
             </font>
@@ -45,13 +45,13 @@
                 <Font name="Calibri" size="16.0" />
             </font>
         </Label>
-        <Label layoutX="476.0" layoutY="320.0" prefHeight="27.0" prefWidth="176.0" text="Enter your weight:" textFill="WHITE">
+        <Label layoutX="476.0" layoutY="320.0" prefHeight="27.0" prefWidth="176.0" text="Enter your weight in kg:" textFill="WHITE">
             <font>
                 <Font name="Calibri" size="16.0" />
             </font>
         </Label>
 
-        <Button fx:id="selectWorkOutButton" layoutX="15.0" layoutY="478.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="210.0" styleClass="ButtonGreen" text="Complete selected">
+        <Button fx:id="selectWorkOutButton" layoutX="15.0" layoutY="478.0" mnemonicParsing="false" onAction="#setCompleted" prefHeight="35.0" prefWidth="210.0" styleClass="ButtonGreen" text="Toggle completed">
             <font>
                 <Font name="Arial" size="13.0" />
             </font>
@@ -67,20 +67,21 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <TextField fx:id="enterRepsField" layoutX="476.0" layoutY="270.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
+        <TextField fx:id="enterRepsField" layoutX="476.0" layoutY="270.0" prefHeight="35.0" prefWidth="402.0" promptText="REPETITIONS" styleClass="TextField" />
         <Label layoutX="478.0" layoutY="243.0" prefHeight="27.0" prefWidth="185.0" text="Enter number of reps:" textFill="WHITE">
             <font>
                 <Font name="Calibri" size="16.0" />
             </font>
         </Label>
-        <HBox layoutX="15.0" layoutY="56.0" prefHeight="407.0" prefWidth="438.0">
+        <HBox layoutX="15.0" layoutY="56.0" prefHeight="407.0" prefWidth="444.0">
             <children>
-                <TableView fx:id="viewWorkout" editable="true" prefHeight="405.0" prefWidth="434.0" styleClass="TableView">
+                <TableView fx:id="viewWorkout" editable="true" prefHeight="407.0" prefWidth="445.0" styleClass="TableView">
                     <columns>
-                        <TableColumn fx:id="workoutColum" prefWidth="139.0" sortable="false" text="Workout" />
-                        <TableColumn fx:id="setsColum" prefWidth="87.0" sortable="false" text="Sets" />
-                        <TableColumn fx:id="repsColum" prefWidth="84.0" sortable="false" text="Reps" />
-                        <TableColumn fx:id="weightColum" prefWidth="123.0" sortable="false" text="Weight" />
+                        <TableColumn fx:id="workoutColum" prefWidth="105.0" sortable="false" text="Workout" />
+                        <TableColumn fx:id="setsColum" prefWidth="68.0" sortable="false" text="Sets" />
+                        <TableColumn fx:id="repsColum" prefWidth="79.0" sortable="false" text="Reps" />
+                        <TableColumn fx:id="weightColum" prefWidth="68.0" sortable="false" text="Weight" />
+                  <TableColumn fx:id="isCompletedColumn" prefWidth="124.0" sortable="false" text="Completed" />
                     </columns></TableView>
             </children>
         </HBox>

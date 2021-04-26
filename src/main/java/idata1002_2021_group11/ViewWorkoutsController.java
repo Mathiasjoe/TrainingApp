@@ -18,6 +18,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class ViewWorkoutsController implements Initializable {
@@ -47,6 +50,8 @@ public class ViewWorkoutsController implements Initializable {
     @FXML
     private TableColumn<Exercise, String> weightColum;
     @FXML
+    private TableColumn<Exercise, String> isCompletedColumn;
+    @FXML
     private TableView viewWorkout;
 
 
@@ -64,6 +69,7 @@ public class ViewWorkoutsController implements Initializable {
     private Set set;
     private Exercise exercise;
     private Workout workout;
+    private boolean isCompleted;
 
 
     @Override
@@ -74,6 +80,7 @@ public class ViewWorkoutsController implements Initializable {
         this.setsColum.setCellValueFactory(new PropertyValueFactory<>("sets"));
         this.repsColum.setCellValueFactory(new PropertyValueFactory<>("reps"));
         this.weightColum.setCellValueFactory(new PropertyValueFactory<>("weight"));
+        this.isCompletedColumn.setCellValueFactory(new PropertyValueFactory<>("isCompleted"));
 
         for (int i = 0; i < this.collection.getWorkouts().size(); i++) {
             viewWorkout.getItems().addAll(this.collection.getWorkouts().get(i).getExercises());
@@ -174,6 +181,15 @@ public class ViewWorkoutsController implements Initializable {
             }
         }
 
+        viewWorkout.refresh();
+    }
+
+    @FXML
+    public void setCompleted(ActionEvent event) {
+        var temp = viewWorkout.getSelectionModel().getSelectedItem();
+        Exercise e = (Exercise) temp;
+        e.setCompleted(!e.getIsCompleted());
+        this.collection.updateFile();
         viewWorkout.refresh();
     }
 
