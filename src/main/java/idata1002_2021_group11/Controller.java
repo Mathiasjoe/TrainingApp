@@ -19,10 +19,12 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+import static java.lang.Thread.sleep;
+
 /**
  * The type Controller.
  */
-public class Controller{
+public class Controller  {
     /**
      * The Create workout button.
      */
@@ -41,15 +43,16 @@ public class Controller{
 
 
   @FXML
-  private TableColumn workoutColum;
+  private TableColumn<Exercise, String> workoutColum;
   @FXML
-  private TableColumn setsColum;
+  private TableColumn<Exercise, String> setsColum;
   @FXML
-  private TableColumn repsColum;
+  private TableColumn<Exercise, String> repsColum;
   @FXML
-  private TableColumn weightColum;
+  private TableColumn<Exercise, String> weightColum;
   @FXML
   private TableView viewWorkout;
+
 
  @FXML
  private TextField enterRepsField;
@@ -60,15 +63,25 @@ public class Controller{
  @FXML
  private TextField enterWorkoutField;
 
+ private WorkoutCollection collection;
+
   private Set set;
   private Exercise exercise;
   private Workout workout;
 
 
- public Controller()
- {
-  
+ public Controller() {
+     this.collection = new WorkoutCollection();
+
+
  }
+
+//    @Override
+//    public void initialize(URL url, ResourceBundle rb){
+//
+//    }
+
+
 
 
     /**
@@ -92,7 +105,8 @@ public class Controller{
     root.getStylesheets().add("trainingApp.css");
     createWindow.setScene(createWorkOutScene);
     createWindow.show();
-  }
+
+    }
 
     /**
      * Switches to the Premade workout scene.
@@ -115,6 +129,17 @@ public class Controller{
     createPremadeWindow.setScene(createPremadeWorkoutScene);
     createPremadeWindow.show();
   }
+ @FXML
+  public void loadData(ActionEvent event) throws IOException {
+     this.workoutColum.setCellValueFactory(new PropertyValueFactory<>("workoutName"));
+     this.setsColum.setCellValueFactory(new PropertyValueFactory<>("sets"));
+     this.repsColum.setCellValueFactory(new PropertyValueFactory<>("reps"));
+     this.weightColum.setCellValueFactory(new PropertyValueFactory<>("weight"));
+
+     for(int i = 0; i < this.collection.getWorkouts().size(); i++) {
+         viewWorkout.getItems().addAll(this.collection.getWorkouts().get(i).getExercises());
+     }
+    }
 
     /**
      * Switches to the calculator scene.
@@ -189,11 +214,16 @@ public class Controller{
     this.repsColum.setCellValueFactory(new PropertyValueFactory<>("reps"));
     this.weightColum.setCellValueFactory(new PropertyValueFactory<>("weight"));
 
+    Exercise exercise = new Exercise(enterWorkoutField.getText(),
+            Integer.parseInt(enterSetsField.getText()),
+            Integer.parseInt(enterRepsField.getText()),
+            Integer.parseInt(enterWeightField.getText()));
 
-    viewWorkout.getItems().add(new Exercise(enterWorkoutField.getText(),
-        Integer.parseInt(enterSetsField.getText()),
-        Integer.parseInt(enterRepsField.getText()),
-        Integer.parseInt(enterWeightField.getText())));
+    viewWorkout.getItems().add(exercise);
+
+    Workout workout = new Workout(enterWorkoutField.getText(),"", LocalDate.now());
+    workout.addExercise(exercise);
+    this.collection.newWorkout(workout);
 
 
     enterWorkoutField.clear();
@@ -208,7 +238,24 @@ public class Controller{
   @FXML
   public void removeWorkoutFromList(ActionEvent event)
   {
-    viewWorkout.getItems().removeAll(viewWorkout.getSelectionModel().getSelectedItem());
+      var temp = viewWorkout.getSelectionModel().getSelectedItem();
+    viewWorkout.getItems().removeAll(temp);
+
+    viewWorkout.getSelectionModel().getFocusedIndex();
+
+    Exercise e = (Exercise) temp;
+    System.out.println(e.getWorkoutName());
+    for(int i = 0; i<this.collection.getWorkouts().size(); i++) {
+        System.out.println(this.collection.getWorkouts().get(i).getExercises());
+        System.out.println(this.collection.getWorkouts().get(i).getExercises().contains(e));
+
+        if(this.collection.getWorkouts().get(i).getExercises().contains(e)) {
+            this.collection.removeWorkout(this.collection.getWorkouts().get(i));
+
+
+        }
+    }
+
     viewWorkout.refresh();
   }
 

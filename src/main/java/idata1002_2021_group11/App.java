@@ -13,7 +13,9 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
  */
+import java.io.*;
 import java.net.URL;
+import java.time.LocalDate;
 //import static idata1002_2021_group11.JsonWriteTest.writeJsonSimpleDemo;
 
 public class App extends Application {
@@ -33,6 +35,40 @@ public class App extends Application {
     scene.getStylesheets().add("trainingApp.css");
     stage.setScene(scene);
     stage.show();
+
+//    try {
+//      Workout workout = new Workout("Legs", "test", LocalDate.now());
+//      Exercise exercise = new Exercise("Squats", 10, 10, 10);
+//      workout.addExercise(exercise);
+//      WorkoutCollection collection = new WorkoutCollection();
+//      collection.newWorkout(workout);
+//      FileOutputStream fileOut = new FileOutputStream("workoutCollection.ser");
+//      ObjectOutputStream out = new ObjectOutputStream(fileOut);
+//      out.writeObject(collection);
+//      out.close();
+//      fileOut.close();
+//      System.out.printf("Serialized data is saved in /tmp/workoutCollection.ser");
+//    } catch (IOException i) {
+//      i.printStackTrace();
+//    }
+  //    WorkoutCollection e = null;
+//    try {
+//      FileInputStream fileIn = new FileInputStream("workoutCollection.ser");
+//      ObjectInputStream in = new ObjectInputStream(fileIn);
+//      e = (WorkoutCollection) in.readObject();
+//      in.close();
+//      fileIn.close();
+//    } catch (IOException i) {
+//      i.printStackTrace();
+//      return;
+//    } catch (ClassNotFoundException c) {
+//      System.out.println("Employee class not found");
+//      c.printStackTrace();
+//      return;
+//    }
+//    System.out.println("Deserialized Employee...");
+//    System.out.println("Name: " + e.getWorkouts());
+
   }
 
 

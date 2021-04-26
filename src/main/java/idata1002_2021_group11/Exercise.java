@@ -8,7 +8,7 @@ import java.util.Iterator;
  * the exercise has no sets, these will be added later once the user creates a workout.
  * The exercise also has a field maxLift, that is initially 0, but can be set later.
  */
-public class Exercise {
+public class Exercise implements java.io.Serializable {
     // Fields...
     private String workoutName; // The name of the workout exercise
     private int sets; // The number of sets in a workout
