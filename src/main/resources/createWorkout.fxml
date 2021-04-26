@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #202020;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #202020;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.ViewWorkoutsController">
     <children>
         <Button fx:id="returnHomeButton" layoutX="11.0" layoutY="443.0" mnemonicParsing="false" onAction="#returnToMainScene" prefHeight="43.0" prefWidth="786.0" styleClass="Button" text="Home" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
             <cursor>
@@ -26,7 +26,7 @@
         <TextField fx:id="enterWorkoutField" layoutX="476.0" layoutY="118.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
         <TextField fx:id="enterSetsField" layoutX="476.0" layoutY="191.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
         <TextField fx:id="enterWeightField" layoutX="476.0" layoutY="347.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
-        <Button fx:id="addExerciseButton" layoutX="478.0" layoutY="430.0" mnemonicParsing="false" onAction="#addWorkoutToList" prefHeight="35.0" prefWidth="402.0" styleClass="ButtonGreen" text="addExercise">
+        <Button  layoutX="478.0" layoutY="430.0" mnemonicParsing="false" onAction="#addWorkoutToList" prefHeight="35.0" prefWidth="402.0" styleClass="ButtonGreen" text="addExercise">
             <font>
                 <Font name="Jokerman" size="13.0" />
             </font>
@@ -84,6 +84,6 @@
                     </columns></TableView>
             </children>
         </HBox>
-      <Button layoutX="247.0" layoutY="18.0" mnemonicParsing="false" text="load data" onAction="#loadData"/>
+
     </children>
 </AnchorPane>

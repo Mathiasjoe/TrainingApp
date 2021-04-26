@@ -71,7 +71,6 @@ public class WorkoutCollection implements java.io.Serializable {
      */
     public void removeWorkout(Workout workout) {
         if(this.workouts.contains(workout)) {
-            System.out.println("here baby");
             this.workouts.remove(workout);
             updateFile();
         } else {
