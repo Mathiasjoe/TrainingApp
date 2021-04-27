@@ -1,27 +1,18 @@
 package idata1002_2021_group11;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
 import java.util.Date;
-import java.util.List;
-import java.util.Objects;
-import java.util.ResourceBundle;
 
 import static java.lang.Thread.sleep;
 
@@ -54,7 +45,7 @@ public class Controller  {
     @FXML
   public void switchToCreateWorkoutButton(ActionEvent event) throws IOException {
     URL createWorkOut = getClass().getClassLoader()
-        .getResource("createWorkout.fxml");
+        .getResource("workouts.fxml");
 
     assert createWorkOut != null;
     Parent root = FXMLLoader.load(createWorkOut);
@@ -99,7 +90,7 @@ public class Controller  {
     @FXML
   public void openCalculatorButton(ActionEvent event) throws IOException {
 
-    URL createCalculator = getClass().getClassLoader().getResource("calculateWorkout.fxml");
+    URL createCalculator = getClass().getClassLoader().getResource("calculator.fxml");
 
     assert createCalculator != null;
     Parent root = FXMLLoader.load(createCalculator);
