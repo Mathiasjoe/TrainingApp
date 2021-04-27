@@ -17,6 +17,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static java.lang.Thread.sleep;
@@ -37,9 +38,17 @@ public class Controller  {
      * The Calculator button.
      */
     public Button calculatorButton;
+    public TextField usernameField;
+    public Label usernameDetails;
+    public Label dateDetails;
+    public Label workoutDetails;
+    public Button applybutton;
 
 
-    public Controller() { }
+    public Controller()
+    {
+
+    }
 
 //    @Override
 //    public void initialize(URL url, ResourceBundle rb){
@@ -157,4 +166,37 @@ public class Controller  {
     createReturnMainMenuWindow.show();
 
   }
+
+  @FXML
+  public void usernamePopUp(ActionEvent event) throws IOException
+  {
+      Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("DetailsPopUp.fxml"));
+
+      Scene popUpScene = new Scene(root);
+
+      Stage popUpStage = new Stage();
+      popUpStage.setTitle("User Details ..");
+      popUpStage.setScene(popUpScene);
+      popUpStage.show();
+
+  }
+
+  @FXML public void addUsernameToApp(ActionEvent event)
+  {
+      //Ein måte å få navne lagra til brukeren kvargang applikasjonen blir slått på
+      //tekstField-e blir nullpointexc? Om noen fikser det er det mulig å få ein forklarelse på kvifor?  - Joakim
+      usernameDetails.setText(usernameField.getText());
+
+      //Burde egentlig være i konstruktøren men får bare nullpointException
+      dateDetails.setText(String.valueOf(LocalDate.now()));
+
+      //Burde legge til ein måte for å vise fram sin "workout" som har blitt valgt fra ein av listene
+
+      Stage exit = (Stage) applybutton.getScene().getWindow();
+      exit.close();
+
+  }
+
+
+
 }
