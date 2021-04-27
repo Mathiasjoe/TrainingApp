@@ -48,12 +48,6 @@ public class Controller  {
     public Label workoutDetails;
     public Button applybutton;
 
-
-//    @Override
-//    public void initialize(URL url, ResourceBundle rb){
-//
-//    }
-
     Date date = new Date();
     SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 
@@ -61,7 +55,7 @@ public class Controller  {
     {
         // Skal det være sånn eller med pop up vindue som er lagt til i stede?
 
-      // mainTextBox.setText("Hello, "+ System.getProperty("user.name") + "\n\n" + "Todays date: " + formatter.format(date));
+      mainTextBox.setText("Hello, "+ System.getProperty("user.name") + "\n\n" + "Todays date: " + formatter.format(date));
     }
 
     /**

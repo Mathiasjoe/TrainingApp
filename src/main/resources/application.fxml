@@ -38,10 +38,10 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" style="-fx-background-color: #202020;" VBox.vgrow="ALWAYS">
       <children>
-         <TextArea id="TextField" fx:id="mainTextBox" editable="false" layoutY="470.0" mouseTransparent="true" prefHeight="137.0" prefWidth="900.0" styleClass="TextField" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="470.0">
+         <TextArea id="TextField" fx:id="mainTextBox" editable="false" layoutY="467.0" mouseTransparent="true" prefHeight="137.0" prefWidth="900.0" styleClass="TextField" text=" " wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="467.0">
             <cursor>
                <Cursor fx:constant="TEXT" />
             </cursor></TextArea>
@@ -105,8 +105,8 @@
                <Image url="@whitecalculator.png" />
             </image>
          </ImageView>
-         <Button fx:id="detailsButton" layoutX="835.0" layoutY="548.0" mnemonicParsing="false" onAction="#usernamePopUp" prefHeight="58.0" prefWidth="65.0" />
-         <ImageView fitHeight="49.0" fitWidth="46.0" layoutX="845.0" layoutY="557.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <Button fx:id="detailsButton" layoutX="813.0" layoutY="506.0" mnemonicParsing="false" onAction="#usernamePopUp" prefHeight="58.0" prefWidth="65.0" />
+         <ImageView fitHeight="49.0" fitWidth="46.0" layoutX="823.0" layoutY="516.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="https://findicons.com/files/icons/2770/ios_7_icons/256/add_user.png" />
             </image>
