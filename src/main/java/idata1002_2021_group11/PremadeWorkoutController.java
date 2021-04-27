@@ -85,9 +85,6 @@ public class PremadeWorkoutController implements Initializable {
 
         root.getStylesheets().add("trainingApp.css");
         createReturnMainMenuWindow.setScene(createReturnMainMenuScene);
-      createReturnMainMenuWindow.show();
-
+        createReturnMainMenuWindow.show();
    }
-
-
 }

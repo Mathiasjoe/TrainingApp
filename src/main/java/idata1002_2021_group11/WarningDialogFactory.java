@@ -79,4 +79,15 @@ public class WarningDialogFactory {
         dialogPane.getStyleClass().add("customDialog");
         return alert;
     }
+
+    public Alert createWorkoutNotSelected() {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setHeaderText("No values selected");
+        alert.setContentText("You need to select an item from the list before deleting.");
+        //Styling
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add("trainingApp.css");;
+        dialogPane.getStyleClass().add("customDialog");
+        return alert;
+    }
 }

@@ -29,10 +29,6 @@ public class ViewWorkoutsController implements Initializable {
      * The Calculator button.
      */
     public Button calculatorButton;
-    /**
-     * The Main text box.
-     */
-
 
     @FXML
     private TableColumn<Exercise, String> workoutColum;
@@ -47,7 +43,6 @@ public class ViewWorkoutsController implements Initializable {
     @FXML
     private TableView viewWorkout;
 
-
     @FXML
     private TextField enterRepsField;
     @FXML
@@ -58,13 +53,7 @@ public class ViewWorkoutsController implements Initializable {
     private TextField enterWorkoutField;
 
     private WorkoutCollection collection;
-
     private WarningDialogFactory warningDialogFactory;
-
-    private Set set;
-    private Exercise exercise;
-    private Workout workout;
-    private boolean isCompleted;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -181,28 +170,24 @@ public class ViewWorkoutsController implements Initializable {
     public void removeWorkoutFromList(ActionEvent event) {
         var temp = viewWorkout.getSelectionModel().getSelectedItem();
         viewWorkout.getItems().removeAll(temp);
-
         viewWorkout.getSelectionModel().getFocusedIndex();
 
+        boolean completed = false;
         Exercise e = (Exercise) temp;
-        //TODO: deletion currently displays alert even if deleted correctly.
-        for (int i = 0; i < this.collection.getWorkouts().size(); i++) {
-            if (this.collection.getWorkouts().get(i).getExercises().contains(e)) {
-                this.collection.removeWorkout(this.collection.getWorkouts().get(i));
-            } else {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setHeaderText("No values selected");
-                alert.setContentText("You need to select an item from the list before deleting.");
 
-                //Styling
-                DialogPane dialogPane = alert.getDialogPane();
-                dialogPane.getStylesheets().add("trainingApp.css");;
-                dialogPane.getStyleClass().add("customDialog");
-
-                alert.showAndWait();
+        if (this.collection.getWorkouts().size() > 0){
+            for (int i = 0; i < this.collection.getWorkouts().size(); i++) {
+                if (this.collection.getWorkouts().get(i).getExercises().contains(e)) {
+                    this.collection.removeWorkout(this.collection.getWorkouts().get(i));
+                    completed = true;
+                }
             }
         }
 
+        if (!completed) {
+            Alert alert = warningDialogFactory.createWorkoutNotSelected();
+            alert.showAndWait();
+        }
         viewWorkout.refresh();
     }
 
@@ -231,7 +216,4 @@ public class ViewWorkoutsController implements Initializable {
             alert.showAndWait();
         }
     }
-
-
-
 }

@@ -46,7 +46,7 @@ public class Controller  {
     public Button applybutton;
 
     Date date = new Date();
-    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+    SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
 
     public void initialize()
     {
