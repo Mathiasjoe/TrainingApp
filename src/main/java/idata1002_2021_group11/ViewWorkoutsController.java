@@ -54,9 +54,11 @@ public class ViewWorkoutsController implements Initializable {
 
     private WorkoutCollection collection;
     private WarningDialogFactory warningDialogFactory;
+    private Controller controller;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        controller = new Controller();
         warningDialogFactory = WarningDialogFactory.getInstance();
         this.collection = new WorkoutCollection();
 
@@ -107,19 +109,8 @@ public class ViewWorkoutsController implements Initializable {
      * @param event the event
      * @throws IOException the io exception
      */
-    @FXML
-    public void returnToMainScene(ActionEvent event) throws IOException {
-        URL createReturnMainMenu = getClass().getClassLoader().getResource("application.fxml");
-
-        assert createReturnMainMenu != null;
-        Parent root = FXMLLoader.load(createReturnMainMenu);
-
-        Scene createReturnMainMenuScene = new Scene(root);
-        Stage createReturnMainMenuWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        root.getStylesheets().add("trainingApp.css");
-        createReturnMainMenuWindow.setScene(createReturnMainMenuScene);
-        createReturnMainMenuWindow.show();
+    @FXML public void returnToMainScene(ActionEvent event) throws IOException {
+        controller.returnToMainScene(event);
     }
 
     /**

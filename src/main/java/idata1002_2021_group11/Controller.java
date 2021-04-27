@@ -48,6 +48,10 @@ public class Controller  {
     Date date = new Date();
     SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
 
+    public Controller() {
+
+    }
+
     public void initialize()
     {
         // Skal det være sånn eller med pop up vindue som er lagt til i stede?

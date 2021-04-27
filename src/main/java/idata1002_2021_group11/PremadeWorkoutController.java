@@ -29,6 +29,7 @@ public class PremadeWorkoutController implements Initializable {
     @FXML private TableColumn<Workout, String> exerciseColumn;
     @FXML private TableColumn<Workout, String> descriptionColumn;
 
+    private Controller controller;
 
     /**
      * Initialize the tables.
@@ -38,6 +39,7 @@ public class PremadeWorkoutController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb){
+        controller = new Controller();
         exerciseColumn.setCellValueFactory(new PropertyValueFactory<>("WorkoutName"));
         descriptionColumn.setCellValueFactory(new PropertyValueFactory<>("Description"));
 
@@ -68,23 +70,13 @@ public class PremadeWorkoutController implements Initializable {
 
 
     /**
-     * Return to main scene.
+     * Returns to the main menu scene.
      *
      * @param event the event
      * @throws IOException the io exception
      */
     @FXML public void returnToMainScene(ActionEvent event) throws IOException
     {
-        URL createReturnMainMenu = getClass().getClassLoader().getResource("application.fxml");
-
-        assert createReturnMainMenu != null;
-        Parent root = FXMLLoader.load(createReturnMainMenu);
-
-        Scene createReturnMainMenuScene = new Scene(root);
-        Stage createReturnMainMenuWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        root.getStylesheets().add("trainingApp.css");
-        createReturnMainMenuWindow.setScene(createReturnMainMenuScene);
-        createReturnMainMenuWindow.show();
-   }
+        controller.returnToMainScene(event);
+    }
 }
