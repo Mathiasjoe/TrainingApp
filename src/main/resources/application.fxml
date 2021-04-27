@@ -36,7 +36,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
 <VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" style="-fx-background-color: #202020;" VBox.vgrow="ALWAYS">
@@ -45,42 +44,39 @@
             <cursor>
                <Cursor fx:constant="TEXT" />
             </cursor></TextArea>
-         <Button fx:id="calculatorButton1" layoutX="606.0" layoutY="370.0" mnemonicParsing="false" onAction="#openCalculatorButton" prefHeight="43.0" prefWidth="280.0" styleClass="Button" text="Calculators" textFill="WHITE" wrapText="true">
+         <Pane layoutX="350.0" layoutY="120.0" prefHeight="459.0" prefWidth="900.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <Button fx:id="calculatorButton1" layoutX="606.0" layoutY="402.0" mnemonicParsing="false" onAction="#openCalculatorButton" prefHeight="43.0" prefWidth="280.0" styleClass="Button" text="Calculators" textFill="WHITE" wrapText="true">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor>
          </Button>
-         <Button fx:id="premadeWorkoutButton1" layoutX="310.0" layoutY="370.0" mnemonicParsing="false" onAction="#switchToPremadeWorkoutButton" prefHeight="43.0" prefWidth="280.0" styleClass="Button" text="Premade workouts" textFill="WHITE">
+         <Button fx:id="premadeWorkoutButton1" layoutX="310.0" layoutY="402.0" mnemonicParsing="false" onAction="#switchToPremadeWorkoutButton" prefHeight="43.0" prefWidth="280.0" styleClass="Button" text="Premade workouts" textFill="WHITE">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor>
          </Button>
-         <Button fx:id="createWorkoutButton1" layoutX="14.0" layoutY="370.0" mnemonicParsing="false" onAction="#switchToCreateWorkoutButton" prefHeight="43.0" prefWidth="280.0" styleClass="Button" text="Your Workouts" textFill="#fcfcfc">
+         <Button fx:id="createWorkoutButton1" layoutX="14.0" layoutY="402.0" mnemonicParsing="false" onAction="#switchToCreateWorkoutButton" prefHeight="43.0" prefWidth="280.0" styleClass="Button" text="Your Workouts" textFill="#fcfcfc">
             <cursor>
                <Cursor fx:constant="HAND" />
             </cursor>
          </Button>
-         <ImageView fitHeight="276.0" fitWidth="310.0" layoutX="8.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="276.0" fitWidth="310.0" layoutX="16.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@whitelifting.png" />
             </image>
          </ImageView>
-         <ImageView fitHeight="268.0" fitWidth="276.0" layoutX="316.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="268.0" fitWidth="276.0" layoutX="316.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@whiteposing.png" />
             </image>
          </ImageView>
-         <ImageView fitHeight="276.0" fitWidth="288.0" layoutX="608.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+         <ImageView fitHeight="276.0" fitWidth="288.0" layoutX="608.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
             <image>
                <Image url="@whitecalculator.png" />
             </image>
          </ImageView>
          <Button fx:id="detailsButton" layoutX="813.0" layoutY="506.0" mnemonicParsing="false" onAction="#usernamePopUp" prefHeight="58.0" prefWidth="65.0" />
-         <ImageView fitHeight="49.0" fitWidth="46.0" layoutX="823.0" layoutY="516.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="https://findicons.com/files/icons/2770/ios_7_icons/256/add_user.png" />
-            </image>
-         </ImageView>
+         </Pane>
       </children>
    </AnchorPane>
 </VBox>

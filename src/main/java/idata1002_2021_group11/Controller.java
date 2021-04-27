@@ -43,9 +43,6 @@ public class Controller  {
     public Button calculatorButton;
     public TextArea mainTextBox;
     public TextField usernameField;
-    public Label usernameDetails;
-    public Label dateDetails;
-    public Label workoutDetails;
     public Button applybutton;
 
     Date date = new Date();
@@ -54,7 +51,6 @@ public class Controller  {
     public void initialize()
     {
         // Skal det være sånn eller med pop up vindue som er lagt til i stede?
-
       mainTextBox.setText("Hello, "+ System.getProperty("user.name") + "\n\n" + "Todays date: " + formatter.format(date));
     }
 
@@ -79,8 +75,7 @@ public class Controller  {
     root.getStylesheets().add("trainingApp.css");
     createWindow.setScene(createWorkOutScene);
     createWindow.show();
-
-    }
+  }
 
     /**
      * Switches to the Premade workout scene.
@@ -154,30 +149,25 @@ public class Controller  {
       Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("DetailsPopUp.fxml"));
 
       Scene popUpScene = new Scene(root);
-
+      System.out.println(LocalDate.now());
       Stage popUpStage = new Stage();
       popUpStage.setTitle("User Details ..");
       popUpStage.setScene(popUpScene);
       popUpStage.show();
-
   }
 
   @FXML public void addUsernameToApp(ActionEvent event)
   {
       //Ein måte å få navne lagra til brukeren kvargang applikasjonen blir slått på
       //tekstField-e blir nullpointexc? Om noen fikser det er det mulig å få ein forklarelse på kvifor?  - Joakim
-      usernameDetails.setText(usernameField.getText());
+      mainTextBox.setText(usernameField.getText());
 
       //Burde egentlig være i konstruktøren men får bare nullpointException
-      dateDetails.setText(String.valueOf(LocalDate.now()));
+      //dateDetails.setText(String.valueOf(LocalDate.now()));
 
       //Burde legge til ein måte for å vise fram sin "workout" som har blitt valgt fra ein av listene
 
       Stage exit = (Stage) applybutton.getScene().getWindow();
       exit.close();
-
   }
-
-
-
 }
