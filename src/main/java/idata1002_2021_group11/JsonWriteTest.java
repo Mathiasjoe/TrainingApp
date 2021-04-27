@@ -7,7 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 */
 /**
- * The class Json write test.
+ * The class Json write test. REMOVE?? yay or nay?
  */
 class JsonWriteTest {
     /**

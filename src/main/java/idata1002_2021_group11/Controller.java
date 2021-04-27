@@ -26,7 +26,7 @@ import java.util.ResourceBundle;
 import static java.lang.Thread.sleep;
 
 /**
- * The type Controller.
+ * Represents the main menu functionality of the application
  */
 public class Controller  {
     /**
@@ -48,6 +48,9 @@ public class Controller  {
     Date date = new Date();
     SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 
+    /**
+     * Initialize the username and date to the user
+     */
     public void initialize()
     {
         // Skal det være sånn eller med pop up vindue som er lagt til i stede?
@@ -57,7 +60,7 @@ public class Controller  {
     /**
      * Switches to the create workout scene
      *
-     * @param event the event
+     * @param event the event that happens when the button is pressed
      * @throws IOException the io exception
      */
     @FXML
@@ -80,7 +83,7 @@ public class Controller  {
     /**
      * Switches to the Premade workout scene.
      *
-     * @param event the event
+     * @param event the event that happens when the button is pressed
      * @throws IOException the io exception
      */
     @FXML
@@ -102,7 +105,7 @@ public class Controller  {
   /**
      * Switches to the calculator scene.
      *
-     * @param event the event
+     * @param event the event that happens when the button is pressed
      * @throws IOException the io exception
      */
     @FXML
@@ -122,9 +125,10 @@ public class Controller  {
   }
 
     /**
+     * MSG TO THE TEAM! remove method? yay or nay? blir ikkje brukt i denne klassen
      * Returns to the main menu scene.
      *
-     * @param event the event
+     * @param event the event that happens when the button is pressed
      * @throws IOException the io exception
      */
     @FXML public void returnToMainScene(ActionEvent event) throws IOException
@@ -143,6 +147,14 @@ public class Controller  {
 
   }
 
+    /**
+     * MSG TO THE TEAM! remove method? yay or nay?
+     *
+     * Loads up a new stage
+     *
+     * @param event the event that happens when the button is pressed
+     * @throws IOException
+     */
   @FXML
   public void usernamePopUp(ActionEvent event) throws IOException
   {
@@ -156,6 +168,13 @@ public class Controller  {
       popUpStage.show();
   }
 
+    /**
+     *  MSG TO THE TEAM! remove method? yay or nay?
+     *
+     * Adds the input the user put into the textfield to the main start window.
+     *
+     * @param event the event that happens when the button is pressed
+     */
   @FXML public void addUsernameToApp(ActionEvent event)
   {
       //Ein måte å få navne lagra til brukeren kvargang applikasjonen blir slått på

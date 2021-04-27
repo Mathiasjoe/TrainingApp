@@ -46,7 +46,7 @@ public class PremadeWorkoutController implements Initializable {
     }
 
     /**
-     * Create an observable list of workouts
+     * Create an observable list of premade workouts
      *
      * @return the observable list
      */
@@ -70,7 +70,7 @@ public class PremadeWorkoutController implements Initializable {
     /**
      * Return to main scene.
      *
-     * @param event the event
+     * @param event the event that happens when the button is pressed
      * @throws IOException the io exception
      */
     @FXML public void returnToMainScene(ActionEvent event) throws IOException

@@ -17,7 +17,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ViewCalculatorController implements Initializable {
+/**
+ * Represents the calculator functionality
+ */
+public class ViewCalculatorController implements Initializable
+{
 
 
     @FXML
@@ -36,7 +40,11 @@ public class ViewCalculatorController implements Initializable {
 
     private WarningDialogFactory warningDialogFactory;
 
-
+    /**
+     *
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         warningDialogFactory = WarningDialogFactory.getInstance();

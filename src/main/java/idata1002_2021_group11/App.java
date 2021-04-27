@@ -18,6 +18,9 @@ import java.net.URL;
 import java.time.LocalDate;
 //import static idata1002_2021_group11.JsonWriteTest.writeJsonSimpleDemo;
 
+/**
+ * Represents the start up function of the application
+ */
 public class App extends Application {
 
   @Override
@@ -35,6 +38,10 @@ public class App extends Application {
     scene.getStylesheets().add("trainingApp.css");
     stage.setScene(scene);
     stage.show();
+
+
+
+    //REMOVE? yay or nay??
 
 //    try {
 //      Workout workout = new Workout("Legs", "test", LocalDate.now());
@@ -102,8 +109,16 @@ public class App extends Application {
 //        return jsonParser.parse(reader);
 //    }
 
-
-    public static void main(String[] args)
+  /**
+   * he main startingpoint for the application. When running the application
+   * from the operating system (Windows/MacOSX/Linux), the operating system is
+   * looking for this main-method to be able to know where to start the
+   * application from.
+   *
+   *
+   * @param args command line arguments as an fixed size array of strings
+   */
+  public static void main(String[] args)
     {
       launch();
     }

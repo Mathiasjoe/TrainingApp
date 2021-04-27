@@ -16,7 +16,11 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class ViewWorkoutsController implements Initializable {
+/**
+ * Represents the tableview functionality
+ */
+public class ViewWorkoutsController implements Initializable
+{
     /**
      * The Create workout button.
      */
@@ -66,6 +70,12 @@ public class ViewWorkoutsController implements Initializable {
     private Workout workout;
     private boolean isCompleted;
 
+
+    /**
+     *
+     * @param url
+     * @param resourceBundle
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         warningDialogFactory = WarningDialogFactory.getInstance();
