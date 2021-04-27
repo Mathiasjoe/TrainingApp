@@ -26,7 +26,7 @@
         <TextField fx:id="enterWorkoutField" layoutX="476.0" layoutY="118.0" prefHeight="35.0" prefWidth="402.0" promptText="Enter text" styleClass="TextField" />
         <TextField fx:id="enterSetsField" layoutX="476.0" layoutY="191.0" prefHeight="35.0" prefWidth="402.0" promptText="SETS" styleClass="TextField" />
         <TextField fx:id="enterWeightField" layoutX="476.0" layoutY="347.0" prefHeight="35.0" prefWidth="402.0" promptText="WEIGHT" styleClass="TextField" />
-        <Button layoutX="478.0" layoutY="430.0" mnemonicParsing="false" onAction="#addWorkoutToList" prefHeight="35.0" prefWidth="402.0" styleClass="ButtonGreen" text="addExercise">
+        <Button layoutX="476.0" layoutY="428.0" mnemonicParsing="false" onAction="#addWorkoutToList" prefHeight="35.0" prefWidth="402.0" styleClass="ButtonGreen" text="addExercise">
             <font>
                 <Font name="Jokerman" size="13.0" />
             </font>
@@ -45,13 +45,13 @@
                 <Font name="Calibri" size="16.0" />
             </font>
         </Label>
-        <Label layoutX="476.0" layoutY="320.0" prefHeight="27.0" prefWidth="176.0" text="Enter your weight in kg:" textFill="WHITE">
+        <Label layoutX="476.0" layoutY="320.0" prefHeight="27.0" prefWidth="176.0" text="Enter weight in kg" textFill="WHITE">
             <font>
                 <Font name="Calibri" size="16.0" />
             </font>
         </Label>
 
-        <Button fx:id="selectWorkOutButton" layoutX="15.0" layoutY="478.0" mnemonicParsing="false" onAction="#setCompleted" prefHeight="35.0" prefWidth="210.0" styleClass="ButtonGreen" text="Toggle completed">
+        <Button fx:id="selectWorkOutButton" layoutX="15.0" layoutY="478.0" mnemonicParsing="false" onAction="#setCompleted" prefHeight="35.0" prefWidth="216.0" styleClass="ButtonGreen" text="Toggle completed">
             <font>
                 <Font name="Arial" size="13.0" />
             </font>
@@ -59,7 +59,7 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </Button>
-        <Button fx:id="removeExercise" layoutX="239.0" layoutY="478.0" mnemonicParsing="false" onAction="#removeWorkoutFromList" prefHeight="35.0" prefWidth="210.0" styleClass="ButtonRed" text="Delete selected">
+        <Button fx:id="removeExercise" layoutX="243.0" layoutY="478.0" mnemonicParsing="false" onAction="#removeWorkoutFromList" prefHeight="35.0" prefWidth="216.0" styleClass="ButtonRed" text="Delete selected">
             <font>
                 <Font name="Jokerman" size="13.0" />
             </font>
