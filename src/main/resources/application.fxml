@@ -75,7 +75,6 @@
                <Image url="@whitecalculator.png" />
             </image>
          </ImageView>
-         <Button fx:id="detailsButton" layoutX="813.0" layoutY="506.0" mnemonicParsing="false" onAction="#usernamePopUp" prefHeight="58.0" prefWidth="65.0" />
          </Pane>
       </children>
    </AnchorPane>

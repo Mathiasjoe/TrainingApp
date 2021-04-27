@@ -29,28 +29,12 @@ import static java.lang.Thread.sleep;
  * Represents the main menu functionality of the application
  */
 public class Controller  {
-    /**
-     * The Create workout button.
-     */
-    public Button createWorkoutButton;
-    /**
-     * The Premade workout button.
-     */
-    public Button premadeWorkoutButton;
-    /**
-     * The Calculator button.
-     */
-    public Button calculatorButton;
     public TextArea mainTextBox;
-    public TextField usernameField;
-    public Button applybutton;
 
     Date date = new Date();
     SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
 
-    public Controller() {
-
-    }
+    public Controller() {}
 
     /**
      * Initialize the username and date to the user
@@ -129,9 +113,7 @@ public class Controller  {
   }
 
     /**
-     * MSG TO THE TEAM! remove method? yay or nay? blir ikkje brukt i denne klassen
-     * Returns to the main menu scene.
-     *
+     * Function to return to main scene.
      * @param event the event that happens when the button is pressed
      * @throws IOException the io exception
      */
@@ -149,48 +131,5 @@ public class Controller  {
     createReturnMainMenuWindow.setScene(createReturnMainMenuScene);
     createReturnMainMenuWindow.show();
 
-  }
-
-    /**
-     * MSG TO THE TEAM! remove method? yay or nay?
-     *
-     * Loads up a new stage
-     *
-     * @param event the event that happens when the button is pressed
-     * @throws IOException
-     */
-  @FXML
-  public void usernamePopUp(ActionEvent event) throws IOException
-  {
-      Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("DetailsPopUp.fxml"));
-
-      Scene popUpScene = new Scene(root);
-      System.out.println(LocalDate.now());
-      Stage popUpStage = new Stage();
-      popUpStage.setTitle("User Details ..");
-      popUpStage.setScene(popUpScene);
-      popUpStage.show();
-  }
-
-    /**
-     *  MSG TO THE TEAM! remove method? yay or nay?
-     *
-     * Adds the input the user put into the textfield to the main start window.
-     *
-     * @param event the event that happens when the button is pressed
-     */
-  @FXML public void addUsernameToApp(ActionEvent event)
-  {
-      //Ein måte å få navne lagra til brukeren kvargang applikasjonen blir slått på
-      //tekstField-e blir nullpointexc? Om noen fikser det er det mulig å få ein forklarelse på kvifor?  - Joakim
-      mainTextBox.setText(usernameField.getText());
-
-      //Burde egentlig være i konstruktøren men får bare nullpointException
-      //dateDetails.setText(String.valueOf(LocalDate.now()));
-
-      //Burde legge til ein måte for å vise fram sin "workout" som har blitt valgt fra ein av listene
-
-      Stage exit = (Stage) applybutton.getScene().getWindow();
-      exit.close();
   }
 }
