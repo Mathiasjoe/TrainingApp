@@ -46,7 +46,11 @@ public class Controller  {
     public Button applybutton;
 
     Date date = new Date();
-    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+    SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+
+    public Controller() {
+
+    }
 
     /**
      * Initialize the username and date to the user

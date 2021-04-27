@@ -33,10 +33,6 @@ public class ViewWorkoutsController implements Initializable
      * The Calculator button.
      */
     public Button calculatorButton;
-    /**
-     * The Main text box.
-     */
-
 
     @FXML
     private TableColumn<Exercise, String> workoutColum;
@@ -51,7 +47,6 @@ public class ViewWorkoutsController implements Initializable
     @FXML
     private TableView viewWorkout;
 
-
     @FXML
     private TextField enterRepsField;
     @FXML
@@ -62,13 +57,8 @@ public class ViewWorkoutsController implements Initializable
     private TextField enterWorkoutField;
 
     private WorkoutCollection collection;
-
     private WarningDialogFactory warningDialogFactory;
-
-    private Set set;
-    private Exercise exercise;
-    private Workout workout;
-    private boolean isCompleted;
+    private Controller controller;
 
 
     /**
@@ -78,6 +68,7 @@ public class ViewWorkoutsController implements Initializable
      */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        controller = new Controller();
         warningDialogFactory = WarningDialogFactory.getInstance();
         this.collection = new WorkoutCollection();
 
@@ -128,19 +119,8 @@ public class ViewWorkoutsController implements Initializable
      * @param event the event
      * @throws IOException the io exception
      */
-    @FXML
-    public void returnToMainScene(ActionEvent event) throws IOException {
-        URL createReturnMainMenu = getClass().getClassLoader().getResource("application.fxml");
-
-        assert createReturnMainMenu != null;
-        Parent root = FXMLLoader.load(createReturnMainMenu);
-
-        Scene createReturnMainMenuScene = new Scene(root);
-        Stage createReturnMainMenuWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-        root.getStylesheets().add("trainingApp.css");
-        createReturnMainMenuWindow.setScene(createReturnMainMenuScene);
-        createReturnMainMenuWindow.show();
+    @FXML public void returnToMainScene(ActionEvent event) throws IOException {
+        controller.returnToMainScene(event);
     }
 
     /**
@@ -191,28 +171,24 @@ public class ViewWorkoutsController implements Initializable
     public void removeWorkoutFromList(ActionEvent event) {
         var temp = viewWorkout.getSelectionModel().getSelectedItem();
         viewWorkout.getItems().removeAll(temp);
-
         viewWorkout.getSelectionModel().getFocusedIndex();
 
+        boolean completed = false;
         Exercise e = (Exercise) temp;
-        //TODO: deletion currently displays alert even if deleted correctly.
-        for (int i = 0; i < this.collection.getWorkouts().size(); i++) {
-            if (this.collection.getWorkouts().get(i).getExercises().contains(e)) {
-                this.collection.removeWorkout(this.collection.getWorkouts().get(i));
-            } else {
-                Alert alert = new Alert(Alert.AlertType.WARNING);
-                alert.setHeaderText("No values selected");
-                alert.setContentText("You need to select an item from the list before deleting.");
 
-                //Styling
-                DialogPane dialogPane = alert.getDialogPane();
-                dialogPane.getStylesheets().add("trainingApp.css");;
-                dialogPane.getStyleClass().add("customDialog");
-
-                alert.showAndWait();
+        if (this.collection.getWorkouts().size() > 0){
+            for (int i = 0; i < this.collection.getWorkouts().size(); i++) {
+                if (this.collection.getWorkouts().get(i).getExercises().contains(e)) {
+                    this.collection.removeWorkout(this.collection.getWorkouts().get(i));
+                    completed = true;
+                }
             }
         }
 
+        if (!completed) {
+            Alert alert = warningDialogFactory.createWorkoutNotSelected();
+            alert.showAndWait();
+        }
         viewWorkout.refresh();
     }
 
@@ -241,7 +217,4 @@ public class ViewWorkoutsController implements Initializable
             alert.showAndWait();
         }
     }
-
-
-
 }
