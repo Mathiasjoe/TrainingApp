@@ -8,7 +8,6 @@ public class Set implements java.io.Serializable {
     private double weight;
     private int repetitions;
 
-
     /**
      * Instantiates a new Set.
      *

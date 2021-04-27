@@ -16,23 +16,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-/**
- * Represents the tableview functionality
- */
-public class ViewWorkoutsController implements Initializable
-{
-    /**
-     * The Create workout button.
-     */
-    public Button createWorkoutButton;
-    /**
-     * The Premade workout button.
-     */
-    public Button premadeWorkoutButton;
-    /**
-     * The Calculator button.
-     */
-    public Button calculatorButton;
+public class ViewWorkoutsController implements Initializable {
 
     @FXML
     private TableColumn<Exercise, String> workoutColum;
@@ -44,9 +28,9 @@ public class ViewWorkoutsController implements Initializable
     private TableColumn<Exercise, String> weightColum;
     @FXML
     private TableColumn<Exercise, String> isCompletedColumn;
+
     @FXML
     private TableView viewWorkout;
-
     @FXML
     private TextField enterRepsField;
     @FXML

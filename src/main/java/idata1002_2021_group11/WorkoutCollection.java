@@ -9,7 +9,6 @@ import java.util.ArrayList;
 public class WorkoutCollection implements java.io.Serializable {
     private ArrayList<Workout> workouts;
 
-
     /**
      * Instantiates a new Workout collection.
      */
