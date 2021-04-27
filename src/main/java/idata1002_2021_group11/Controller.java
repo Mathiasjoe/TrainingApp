@@ -57,8 +57,11 @@ public class Controller  {
     Date date = new Date();
     SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 
-    public void initialize() {
-      mainTextBox.setText("Hello, "+ System.getProperty("user.name") + "\n\n" + "Todays date: " + formatter.format(date));
+    public void initialize()
+    {
+        // Skal det være sånn eller med pop up vindue som er lagt til i stede?
+
+      // mainTextBox.setText("Hello, "+ System.getProperty("user.name") + "\n\n" + "Todays date: " + formatter.format(date));
     }
 
     /**
