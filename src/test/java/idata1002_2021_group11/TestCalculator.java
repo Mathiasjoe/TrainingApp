@@ -9,12 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestCalculator {
 
-    private Exercise exercise;
     private Calculator calculator;
 
     @BeforeEach
     public void initTests() {
-        exercise = new Exercise("Benkpress", 22 ,22,22);
         calculator = new Calculator();
     }
 
@@ -22,8 +20,7 @@ public class TestCalculator {
     @Test
     public void testCalculateAndSetMaxLiftCorrectly() {
         try {
-            calculator.calculateAndSetMaxLift(exercise, 90, 5);
-            assertEquals(105, exercise.getMaxLift());
+            assertEquals(105, calculator.calculateAndSetMaxLift( 90, 5));
         } catch (IllegalArgumentException iae) {
             fail("Exception not expected.");
         }
@@ -33,7 +30,7 @@ public class TestCalculator {
     @Test
     public void testCalculateAndSetMaxLiftWithInvalidRepetitions() {
         try {
-            calculator.calculateAndSetMaxLift(exercise,90,0);
+            calculator.calculateAndSetMaxLift(90,0);
             fail("Expected exception.");
         } catch (IllegalArgumentException iae) {
             assert true;
@@ -44,18 +41,7 @@ public class TestCalculator {
     @Test
     public void testCalculateAndSetMaxLiftWithInvalidWeight() {
         try {
-            calculator.calculateAndSetMaxLift(exercise,-10,5);
-            fail("Expected exception.");
-        } catch (IllegalArgumentException iae) {
-            assert true;
-        }
-    }
-
-    @DisplayName("Test the calculateAndSetMaxLift method with null exercise.")
-    @Test
-    public void testCalculateAndSetMaxLiftWithInvalidExercise() {
-        try {
-            calculator.calculateAndSetMaxLift(null,90,5);
+            calculator.calculateAndSetMaxLift(-10,5);
             fail("Expected exception.");
         } catch (IllegalArgumentException iae) {
             assert true;

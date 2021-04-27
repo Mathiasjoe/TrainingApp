@@ -16,7 +16,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -38,6 +41,7 @@ public class Controller  {
      * The Calculator button.
      */
     public Button calculatorButton;
+    public TextArea mainTextBox;
     public TextField usernameField;
     public Label usernameDetails;
     public Label dateDetails;
@@ -45,18 +49,17 @@ public class Controller  {
     public Button applybutton;
 
 
-    public Controller()
-    {
-
-    }
-
 //    @Override
 //    public void initialize(URL url, ResourceBundle rb){
 //
 //    }
 
+    Date date = new Date();
+    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 
-
+    public void initialize() {
+      mainTextBox.setText("Hello, "+ System.getProperty("user.name") + "\n\n" + "Todays date: " + formatter.format(date));
+    }
 
     /**
      * Switches to the create workout scene
@@ -103,6 +106,7 @@ public class Controller  {
     createPremadeWindow.setScene(createPremadeWorkoutScene);
     createPremadeWindow.show();
   }
+
   /**
      * Switches to the calculator scene.
      *
@@ -125,26 +129,6 @@ public class Controller  {
     createCalculatorWindow.show();
   }
 
-  /**
-   * Switches to the calculate bench press scene.
-   *
-   * @param event
-   * @throws IOException
-
-  @FXML
-  public void switchToCalculateBenchPress(ActionEvent event) throws IOException {
-    URL createCalculateBenchPress = getClass().getClassLoader().getResource("legg til her Framtidig FXML scene navn.fxml");
-
-    assert createCalculateBenchPress != null;
-    Parent root = FXMLLoader.load(createCalculateBenchPress);
-
-    Scene createCalculatorBenchPressScene = new Scene(root);
-    Stage createCalculateBenchPressWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-    createCalculateBenchPressWindow.setScene(createCalculatorBenchPressScene);
-    createCalculateBenchPressWindow.show();
-  }
-**/
     /**
      * Returns to the main menu scene.
      *
