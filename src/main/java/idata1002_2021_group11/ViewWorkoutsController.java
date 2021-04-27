@@ -9,16 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.Collection;
-import java.util.Comparator;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 public class ViewWorkoutsController implements Initializable {
@@ -69,7 +64,6 @@ public class ViewWorkoutsController implements Initializable {
     private Workout workout;
     private boolean isCompleted;
 
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.collection = new WorkoutCollection();
@@ -85,27 +79,6 @@ public class ViewWorkoutsController implements Initializable {
         }
     }
 
-
-
-    /**
-     * Switches to the calculate bench press scene.
-     *
-     * @param event
-     * @throws IOException
-
-     @FXML public void switchToCalculateBenchPress(ActionEvent event) throws IOException {
-     URL createCalculateBenchPress = getClass().getClassLoader().getResource("legg til her Framtidig FXML scene navn.fxml");
-
-     assert createCalculateBenchPress != null;
-     Parent root = FXMLLoader.load(createCalculateBenchPress);
-
-     Scene createCalculatorBenchPressScene = new Scene(root);
-     Stage createCalculateBenchPressWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-     createCalculateBenchPressWindow.setScene(createCalculatorBenchPressScene);
-     createCalculateBenchPressWindow.show();
-     }
-     **/
     /**
      * Returns to the main menu scene.
      *
@@ -127,6 +100,11 @@ public class ViewWorkoutsController implements Initializable {
         createReturnMainMenuWindow.show();
     }
 
+    /**
+     * Adds a workout session to the list of workouts
+     * User enters a string for workout name, number for sets, reps and weight.
+     * if incorrect values are entered, user gets an alert.
+     */
     @FXML
     public void addWorkoutToList(ActionEvent event) {
 
@@ -169,6 +147,10 @@ public class ViewWorkoutsController implements Initializable {
 
     }
 
+    /**
+     * Removes a workout from the list of workouts.
+     * If user does not select before pressing button, show alert.
+     */
     @FXML
     public void removeWorkoutFromList(ActionEvent event) {
         var temp = viewWorkout.getSelectionModel().getSelectedItem();
@@ -177,6 +159,7 @@ public class ViewWorkoutsController implements Initializable {
         viewWorkout.getSelectionModel().getFocusedIndex();
 
         Exercise e = (Exercise) temp;
+        //TODO: deletion currently displays alert even if deleted correctly.
         for (int i = 0; i < this.collection.getWorkouts().size(); i++) {
             if (this.collection.getWorkouts().get(i).getExercises().contains(e)) {
                 this.collection.removeWorkout(this.collection.getWorkouts().get(i));
@@ -197,6 +180,10 @@ public class ViewWorkoutsController implements Initializable {
         viewWorkout.refresh();
     }
 
+    /**
+     * Toggles a workout from list as completed or not.
+     * If user does not select before pressing button, show alert.
+     */
     @FXML
     public void setCompleted(ActionEvent event) {
         try {
