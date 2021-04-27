@@ -16,7 +16,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
+import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import static java.lang.Thread.sleep;
@@ -37,17 +41,22 @@ public class Controller  {
      * The Calculator button.
      */
     public Button calculatorButton;
+    public TextArea mainTextBox;
+    public TextField usernameField;
+    public Label usernameDetails;
+    public Label dateDetails;
+    public Label workoutDetails;
+    public Button applybutton;
 
+    Date date = new Date();
+    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 
-    public Controller() { }
+    public void initialize()
+    {
+        // Skal det være sånn eller med pop up vindue som er lagt til i stede?
 
-//    @Override
-//    public void initialize(URL url, ResourceBundle rb){
-//
-//    }
-
-
-
+      mainTextBox.setText("Hello, "+ System.getProperty("user.name") + "\n\n" + "Todays date: " + formatter.format(date));
+    }
 
     /**
      * Switches to the create workout scene
@@ -94,6 +103,7 @@ public class Controller  {
     createPremadeWindow.setScene(createPremadeWorkoutScene);
     createPremadeWindow.show();
   }
+
   /**
      * Switches to the calculator scene.
      *
@@ -116,26 +126,6 @@ public class Controller  {
     createCalculatorWindow.show();
   }
 
-  /**
-   * Switches to the calculate bench press scene.
-   *
-   * @param event
-   * @throws IOException
-
-  @FXML
-  public void switchToCalculateBenchPress(ActionEvent event) throws IOException {
-    URL createCalculateBenchPress = getClass().getClassLoader().getResource("legg til her Framtidig FXML scene navn.fxml");
-
-    assert createCalculateBenchPress != null;
-    Parent root = FXMLLoader.load(createCalculateBenchPress);
-
-    Scene createCalculatorBenchPressScene = new Scene(root);
-    Stage createCalculateBenchPressWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-    createCalculateBenchPressWindow.setScene(createCalculatorBenchPressScene);
-    createCalculateBenchPressWindow.show();
-  }
-**/
     /**
      * Returns to the main menu scene.
      *
@@ -157,4 +147,37 @@ public class Controller  {
     createReturnMainMenuWindow.show();
 
   }
+
+  @FXML
+  public void usernamePopUp(ActionEvent event) throws IOException
+  {
+      Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("DetailsPopUp.fxml"));
+
+      Scene popUpScene = new Scene(root);
+
+      Stage popUpStage = new Stage();
+      popUpStage.setTitle("User Details ..");
+      popUpStage.setScene(popUpScene);
+      popUpStage.show();
+
+  }
+
+  @FXML public void addUsernameToApp(ActionEvent event)
+  {
+      //Ein måte å få navne lagra til brukeren kvargang applikasjonen blir slått på
+      //tekstField-e blir nullpointexc? Om noen fikser det er det mulig å få ein forklarelse på kvifor?  - Joakim
+      usernameDetails.setText(usernameField.getText());
+
+      //Burde egentlig være i konstruktøren men får bare nullpointException
+      dateDetails.setText(String.valueOf(LocalDate.now()));
+
+      //Burde legge til ein måte for å vise fram sin "workout" som har blitt valgt fra ein av listene
+
+      Stage exit = (Stage) applybutton.getScene().getWindow();
+      exit.close();
+
+  }
+
+
+
 }

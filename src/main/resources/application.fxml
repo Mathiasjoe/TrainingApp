@@ -34,59 +34,83 @@
 
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" style="-fx-background-color: #202020;" VBox.vgrow="ALWAYS">
+   <AnchorPane maxHeight="-1.0" maxWidth="-1.0" style="-fx-background-color: #202020;" VBox.vgrow="ALWAYS">
       <children>
-         <AnchorPane layoutY="63.0" prefHeight="400.0" prefWidth="900.0" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-            <children>
-                <Button fx:id="createWorkoutButton" layoutX="14.0" layoutY="349.0" mnemonicParsing="false" onAction="#switchToCreateWorkoutButton" prefHeight="43.0" prefWidth="280.0" styleClass="Button" text="Your Workouts" textFill="#fcfcfc" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0">
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
-               <Button fx:id="premadeWorkoutButton" layoutX="311.0" layoutY="312.0" mnemonicParsing="false" onAction="#switchToPremadeWorkoutButton" prefHeight="43.0" prefWidth="280.0" styleClass="Button" text="Premade workouts" textFill="WHITE" AnchorPane.bottomAnchor="15.0">
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </Button>
-               <Button fx:id="calculatorButton" layoutX="606.0" layoutY="312.0" mnemonicParsing="false" onAction="#openCalculatorButton" prefHeight="43.0" prefWidth="280.0" styleClass="Button" text="One Rep Max Calculator" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="15.0">
-                  <cursor>
-                     <Cursor fx:constant="HAND" />
-                  </cursor>
-               </Button>
-               <ImageView blendMode="ADD" fitHeight="287.0" fitWidth="280.0" layoutX="10.0" layoutY="6.0" opacity="0.73" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
-                  <image>
-                     <Image url="/whitelifting.png" />
-                  </image>
-                  <effect>
-                     <DropShadow height="89.2" radius="34.4625" width="50.65" />
-                  </effect></ImageView>
-               <ImageView blendMode="ADD" fitHeight="264.0" fitWidth="274.0" layoutX="311.0" opacity="0.83" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
-                  <image>
-                     <Image url="/whiteposing.png" />
-                  </image>
-                  <effect>
-                     <DropShadow height="91.91" radius="38.0425" width="62.26" />
-                  </effect></ImageView>
-               <ImageView blendMode="ADD" fitHeight="313.0" fitWidth="280.0" layoutX="605.0" layoutY="1.0" opacity="0.81" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="0.0">
-                  <image>
-                     <Image url="/whitecalculator.png" />
-                  </image>
-                  <cursor>
-                     <Cursor fx:constant="DEFAULT" />
-                  </cursor>
-                  <effect>
-                     <DropShadow height="74.38" radius="31.502499999999998" width="53.63" />
-                  </effect></ImageView>
-            </children></AnchorPane>
-         <TextArea id="TextField" fx:id="mainTextBox" editable="false" layoutY="463.0" mouseTransparent="true" prefHeight="137.0" prefWidth="900.0" styleClass="TextField" text="Hello guy&#10;Tuesday&#10;Scheduled workout: Legs" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <TextArea id="TextField" fx:id="mainTextBox" editable="false" layoutY="467.0" mouseTransparent="true" prefHeight="137.0" prefWidth="900.0" styleClass="TextField" text=" " wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="467.0">
             <cursor>
                <Cursor fx:constant="TEXT" />
             </cursor></TextArea>
+         <Label layoutX="8.0" layoutY="473.0" prefHeight="17.0" prefWidth="65.0" text="Hello!" textFill="#464545">
+            <font>
+               <Font name="Jokerman" size="20.0" />
+            </font>
+         </Label>
+         <Label fx:id="usernameDetails" layoutX="214.0" layoutY="473.0" text="Username" textFill="#4d4949">
+            <font>
+               <Font name="Jokerman" size="19.0" />
+            </font>
+         </Label>
+         <Label layoutX="6.0" layoutY="519.0" prefHeight="32.0" prefWidth="134.0" text="Today's date" textFill="#757575">
+            <font>
+               <Font name="Jokerman" size="20.0" />
+            </font>
+         </Label>
+         <Label fx:id="dateDetails" layoutX="214.0" layoutY="523.0" prefHeight="32.0" prefWidth="134.0" text="Date" textFill="#8d8a8a">
+            <font>
+               <Font name="Jokerman" size="20.0" />
+            </font>
+         </Label>
+         <Label layoutX="8.0" layoutY="555.0" prefHeight="32.0" prefWidth="174.0" text="Today's workout" textFill="#727272">
+            <font>
+               <Font name="Jokerman" size="20.0" />
+            </font>
+         </Label>
+         <Label fx:id="workoutDetails" layoutX="214.0" layoutY="555.0" prefHeight="32.0" prefWidth="134.0" text="Workout" textFill="#575757">
+            <font>
+               <Font name="Jokerman" size="20.0" />
+            </font>
+         </Label>
+         <Button fx:id="calculatorButton1" layoutX="606.0" layoutY="370.0" mnemonicParsing="false" onAction="#openCalculatorButton" prefHeight="43.0" prefWidth="280.0" styleClass="Button" text="Calculators" textFill="WHITE" wrapText="true">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Button fx:id="premadeWorkoutButton1" layoutX="310.0" layoutY="370.0" mnemonicParsing="false" onAction="#switchToPremadeWorkoutButton" prefHeight="43.0" prefWidth="280.0" styleClass="Button" text="Premade workouts" textFill="WHITE">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Button fx:id="createWorkoutButton1" layoutX="14.0" layoutY="370.0" mnemonicParsing="false" onAction="#switchToCreateWorkoutButton" prefHeight="43.0" prefWidth="280.0" styleClass="Button" text="Your Workouts" textFill="#fcfcfc">
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <ImageView fitHeight="276.0" fitWidth="310.0" layoutX="8.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@whitelifting.png" />
+            </image>
+         </ImageView>
+         <ImageView fitHeight="268.0" fitWidth="276.0" layoutX="316.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@whiteposing.png" />
+            </image>
+         </ImageView>
+         <ImageView fitHeight="276.0" fitWidth="288.0" layoutX="608.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@whitecalculator.png" />
+            </image>
+         </ImageView>
+         <Button fx:id="detailsButton" layoutX="813.0" layoutY="506.0" mnemonicParsing="false" onAction="#usernamePopUp" prefHeight="58.0" prefWidth="65.0" />
+         <ImageView fitHeight="49.0" fitWidth="46.0" layoutX="823.0" layoutY="516.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="https://findicons.com/files/icons/2770/ios_7_icons/256/add_user.png" />
+            </image>
+         </ImageView>
       </children>
-    </AnchorPane>
+   </AnchorPane>
 </VBox>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="253.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.Controller">
+   <children>
+      <Label layoutX="57.0" layoutY="8.0" prefHeight="33.0" prefWidth="486.0" text="Welcome to the workout application!">
+         <font>
+            <Font name="JetBrains Mono ExtraBold" size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="73.0" layoutY="94.0" prefHeight="33.0" prefWidth="435.0" text="Enter your name under this text">
+         <font>
+            <Font name="JetBrains Mono ExtraBold" size="23.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameField" layoutX="216.0" layoutY="144.0" />
+      <Button fx:id="applybutton" layoutX="265.0" layoutY="192.0" mnemonicParsing="false" onAction="#addUsernameToApp" prefHeight="47.0" prefWidth="51.0" />
+      <ImageView fitHeight="33.0" fitWidth="71.0" layoutX="274.0" layoutY="199.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="https://icons.iconarchive.com/icons/alecive/flatwoken/256/Apps-Dialog-Apply-icon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

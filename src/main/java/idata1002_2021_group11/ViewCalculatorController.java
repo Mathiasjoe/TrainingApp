@@ -78,6 +78,14 @@ public class ViewCalculatorController implements Initializable {
             resultField.setText(stringResult);
         } catch (NumberFormatException numberFormatException) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("Insufficient input");
+            alert.setContentText("Input fields can not be empty.\nThey also have to be numeric.");
+
+            //Styling
+            DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStylesheets().add("trainingApp.css");
+            dialogPane.getStyleClass().add("customDialog");
+
             alert.showAndWait();
         } catch (IllegalArgumentException illegalArgumentException) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
