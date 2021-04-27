@@ -59,6 +59,8 @@ public class ViewWorkoutsController implements Initializable {
 
     private WorkoutCollection collection;
 
+    private WarningDialogFactory warningDialogFactory;
+
     private Set set;
     private Exercise exercise;
     private Workout workout;
@@ -66,6 +68,7 @@ public class ViewWorkoutsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        warningDialogFactory = WarningDialogFactory.getInstance();
         this.collection = new WorkoutCollection();
 
         this.workoutColum.setCellValueFactory(new PropertyValueFactory<>("workoutName"));
@@ -155,14 +158,7 @@ public class ViewWorkoutsController implements Initializable {
             workout.addExercise(exercise);
             this.collection.newWorkout(workout);
         } catch (NumberFormatException numberFormatException) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setHeaderText("Insufficient input");
-            alert.setContentText("Input fields can not be empty.\n \nSets, reps and weight must be a number.");
-
-            //Styling
-            DialogPane dialogPane = alert.getDialogPane();
-            dialogPane.getStylesheets().add("trainingApp.css");;
-            dialogPane.getStyleClass().add("customDialog");
+            Alert alert = warningDialogFactory.createWorkoutsInvalidInputDialog();
 
             alert.showAndWait();
         }

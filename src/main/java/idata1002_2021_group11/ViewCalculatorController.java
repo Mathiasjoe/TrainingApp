@@ -34,9 +34,12 @@ public class ViewCalculatorController implements Initializable {
 
     private Calculator calculator;
 
+    private WarningDialogFactory warningDialogFactory;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        warningDialogFactory = WarningDialogFactory.getInstance();
         calculator = new Calculator();
         aboutText.setText("This calculator takes two inputs to calculate your one repetition maximum on\n" +
                 "any given exercise. Your one-rep max is the max weight you can lift for a single\n" +
@@ -70,6 +73,10 @@ public class ViewCalculatorController implements Initializable {
 
     }
 
+    /**
+     * Takes two inputs from the user, weight and repetitions, and uses them to calculate and display the one-rep
+     * max lift.
+     */
     public void calculateMaxLift() {
         try {
             float result = calculator.calculateAndSetMaxLift(Float.parseFloat(enterWeightField.getText()),
@@ -77,18 +84,10 @@ public class ViewCalculatorController implements Initializable {
             String stringResult = String.valueOf(result);
             resultField.setText(stringResult);
         } catch (NumberFormatException numberFormatException) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setHeaderText("Insufficient input");
-            alert.setContentText("Input fields can not be empty.\nThey also have to be numeric.");
-
-            //Styling
-            DialogPane dialogPane = alert.getDialogPane();
-            dialogPane.getStylesheets().add("trainingApp.css");
-            dialogPane.getStyleClass().add("customDialog");
-
+            Alert alert = warningDialogFactory.createCalculatorEmptyFieldsDialog();
             alert.showAndWait();
         } catch (IllegalArgumentException illegalArgumentException) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
+            Alert alert = warningDialogFactory.createCalculatorInvalidInputDialog();
             alert.showAndWait();
         }
     }
