@@ -13,6 +13,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.Collection;
@@ -124,7 +125,6 @@ public class ViewWorkoutsController implements Initializable {
         root.getStylesheets().add("trainingApp.css");
         createReturnMainMenuWindow.setScene(createReturnMainMenuScene);
         createReturnMainMenuWindow.show();
-
     }
 
     @FXML
@@ -157,7 +157,6 @@ public class ViewWorkoutsController implements Initializable {
             dialogPane.getStyleClass().add("customDialog");
 
             alert.showAndWait();
-
         }
 
 
@@ -181,8 +180,17 @@ public class ViewWorkoutsController implements Initializable {
         for (int i = 0; i < this.collection.getWorkouts().size(); i++) {
             if (this.collection.getWorkouts().get(i).getExercises().contains(e)) {
                 this.collection.removeWorkout(this.collection.getWorkouts().get(i));
+            } else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setHeaderText("No values selected");
+                alert.setContentText("You need to select an item from the list before deleting.");
 
+                //Styling
+                DialogPane dialogPane = alert.getDialogPane();
+                dialogPane.getStylesheets().add("trainingApp.css");;
+                dialogPane.getStyleClass().add("customDialog");
 
+                alert.showAndWait();
             }
         }
 
@@ -191,11 +199,24 @@ public class ViewWorkoutsController implements Initializable {
 
     @FXML
     public void setCompleted(ActionEvent event) {
-        var temp = viewWorkout.getSelectionModel().getSelectedItem();
-        Exercise e = (Exercise) temp;
-        e.setCompleted(!e.getIsCompleted());
-        this.collection.updateFile();
-        viewWorkout.refresh();
+        try {
+            var temp = viewWorkout.getSelectionModel().getSelectedItem();
+            Exercise e = (Exercise) temp;
+            e.setCompleted(!e.getIsCompleted());
+            this.collection.updateFile();
+            viewWorkout.refresh();
+        } catch (NullPointerException nullPointerException) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setHeaderText("No values selected");
+            alert.setContentText("You need to select an item from the list before \ntoggling completion");
+
+            //Styling
+            DialogPane dialogPane = alert.getDialogPane();
+            dialogPane.getStylesheets().add("trainingApp.css");;
+            dialogPane.getStyleClass().add("customDialog");
+
+            alert.showAndWait();
+        }
     }
 
 
