@@ -8,7 +8,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
+import javafx.scene.control.DialogPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -28,12 +29,45 @@ public class ViewCalculatorController implements Initializable {
     @FXML
     private TextField resultField;
 
+    @FXML
+    private TextArea aboutText;
+
     private Calculator calculator;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         calculator = new Calculator();
+        aboutText.setText("This calculator takes two inputs to calculate your one repetition maximum on\n" +
+                "any given exercise. Your one-rep max is the max weight you can lift for a single\n" +
+                "repetition for a given exercise. This calculator uses the epley-formula and is\n" +
+                "most accurate when performing 2 - 6 repetitions. \n \n" +
+                "It can be useful to know your one-rep max on a given exercise so that you can\n" +
+                "intelligently choose which weight to work with for the best progression.\n" +
+                "For example, if you want to do 5 repetitions for 3 sets, you might want to\n" +
+                "use about 80 - 85 ‰ of your one-rep max if you want optimal strength\n" +
+                        "progression.");
+
+        enterRepetitionsField.textProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                if (newValue.length() > 0) {
+                    Integer.parseInt(newValue);
+                }
+            } catch (NumberFormatException e) {
+                enterRepetitionsField.setText(oldValue);
+            }
+        });
+
+        enterWeightField.textProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                if (newValue.length() > 0) {
+                    Float.parseFloat(newValue);
+                }
+            } catch (NumberFormatException e) {
+                enterWeightField.setText(oldValue);
+            }
+        });
+
     }
 
     public void calculateMaxLift() {
@@ -43,6 +77,9 @@ public class ViewCalculatorController implements Initializable {
             String stringResult = String.valueOf(result);
             resultField.setText(stringResult);
         } catch (NumberFormatException numberFormatException) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.showAndWait();
+        } catch (IllegalArgumentException illegalArgumentException) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.showAndWait();
         }

@@ -77,6 +77,36 @@ public class ViewWorkoutsController implements Initializable {
         for (int i = 0; i < this.collection.getWorkouts().size(); i++) {
             viewWorkout.getItems().addAll(this.collection.getWorkouts().get(i).getExercises());
         }
+
+        enterRepsField.textProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                if (newValue.length() > 0) {
+                    Integer.parseInt(newValue);
+                }
+            } catch (NumberFormatException e) {
+                enterRepsField.setText(oldValue);
+            }
+        });
+
+        enterWeightField.textProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                if (newValue.length() > 0) {
+                    Float.parseFloat(newValue);
+                }
+            } catch (NumberFormatException e) {
+                enterWeightField.setText(oldValue);
+            }
+        });
+
+        enterSetsField.textProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                if (newValue.length() > 0) {
+                    Integer.parseInt(newValue);
+                }
+            } catch (NumberFormatException e) {
+                enterSetsField.setText(oldValue);
+            }
+        });
     }
 
     /**
@@ -117,7 +147,7 @@ public class ViewWorkoutsController implements Initializable {
             Exercise exercise = new Exercise(enterWorkoutField.getText(),
                     Integer.parseInt(enterSetsField.getText()),
                     Integer.parseInt(enterRepsField.getText()),
-                    Integer.parseInt(enterWeightField.getText()));
+                    Float.parseFloat(enterWeightField.getText()));
 
             viewWorkout.getItems().add(exercise);
 

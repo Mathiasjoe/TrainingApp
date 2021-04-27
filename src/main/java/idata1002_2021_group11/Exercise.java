@@ -13,7 +13,7 @@ public class Exercise implements java.io.Serializable {
     private String workoutName; // The name of the workout exercise
     private int sets; // The number of sets in a workout
     private int reps; // The number of repetitions in a set
-    private int weight; // The weight to be lifted in the workout exercise
+    private float weight; // The weight to be lifted in the workout exercise
     private boolean isCompleted;
 
 
@@ -30,7 +30,7 @@ public class Exercise implements java.io.Serializable {
      * @param reps The number of repetitions in a set
      * @param weight The weight to be lifted
      */
-    public Exercise(String workoutName, int sets, int reps, int weight)
+    public Exercise(String workoutName, int sets, int reps, float weight)
     { // Constructor...
         this.workoutName = workoutName;
         this.sets = sets;
@@ -95,7 +95,7 @@ public class Exercise implements java.io.Serializable {
      *
      * @return The weight lifted to be returned.
      */
-    public int getWeight()
+    public float getWeight()
     {
         return this.weight;
     }
@@ -105,7 +105,7 @@ public class Exercise implements java.io.Serializable {
      *
      * @param weight The weight to be lifted.
      */
-    public void setWeight(int weight)
+    public void setWeight(float weight)
     {
         this.weight = weight;
     }
