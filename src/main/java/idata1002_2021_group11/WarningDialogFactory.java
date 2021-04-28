@@ -80,7 +80,12 @@ public class WarningDialogFactory {
         return alert;
     }
 
-    public Alert createWorkoutNotSelected() {
+    /**
+     * Creates a dialog warning the user that an exercise needs to be selected before deleting.
+     *
+     * @return a dialog warning the user that an exercise needs to be selected before deleting.
+     */
+    public Alert createWorkoutNotSelectedDialog() {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setHeaderText("No values selected");
         alert.setContentText("You need to select an item from the list before deleting.");

@@ -12,7 +12,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 /**
- * Represents the calculator functionality
+ * Is responsible for handling user events in the calculator view.
  */
 public class ViewCalculatorController implements Initializable
 {
@@ -32,11 +32,6 @@ public class ViewCalculatorController implements Initializable
     private Calculator calculator;
     private WarningDialogFactory warningDialogFactory;
 
-    /**
-     *
-     * @param url
-     * @param resourceBundle
-     */
     private Controller controller;
 
     @Override

@@ -2,20 +2,18 @@ package idata1002_2021_group11;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
+/**
+ * Is responsible for handling user events in the workout view.
+ */
 public class ViewWorkoutsController implements Initializable {
 
     @FXML
@@ -30,7 +28,7 @@ public class ViewWorkoutsController implements Initializable {
     private TableColumn<Exercise, String> isCompletedColumn;
 
     @FXML
-    private TableView viewWorkout;
+    private TableView<Exercise> viewWorkout;
     @FXML
     private TextField enterRepsField;
     @FXML
@@ -45,11 +43,6 @@ public class ViewWorkoutsController implements Initializable {
     private Controller controller;
 
 
-    /**
-     *
-     * @param url
-     * @param resourceBundle
-     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         controller = new Controller();
@@ -170,7 +163,7 @@ public class ViewWorkoutsController implements Initializable {
         }
 
         if (!completed) {
-            Alert alert = warningDialogFactory.createWorkoutNotSelected();
+            Alert alert = warningDialogFactory.createWorkoutNotSelectedDialog();
             alert.showAndWait();
         }
         viewWorkout.refresh();

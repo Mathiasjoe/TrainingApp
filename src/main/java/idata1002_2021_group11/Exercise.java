@@ -19,8 +19,6 @@ public class Exercise implements java.io.Serializable
 
 
     private ArrayList<Set> setse = new ArrayList<>(); // The list of sets
-    private float maxLift = 0; // The maximum lift for a exercise/workout
-    private int order; // The number to order
 
     /**
      * Instantiates a new Exercise.
@@ -33,7 +31,11 @@ public class Exercise implements java.io.Serializable
      */
     public Exercise(String workoutName, int sets, int reps, float weight)
     { // Constructor...
-        this.workoutName = workoutName;
+        if (workoutName != null) {
+            this.workoutName = workoutName;
+        } else {
+            throw new IllegalArgumentException("WorkoutName cannot be null...");
+        }
         this.sets = sets;
         this.reps = reps;
         this.weight = weight;
@@ -122,15 +124,6 @@ public class Exercise implements java.io.Serializable
     }
 
     /**
-     * Returns the max lift of the exercise. Returns 0 if max lift has not been set.
-     *
-     * @return The max lift
-     */
-    public float getMaxLift() {
-        return maxLift;
-    }
-
-    /**
      * Edits the exercise name. if no name is set or the name is blank an
      * exception will be thrown
      *
@@ -142,7 +135,7 @@ public class Exercise implements java.io.Serializable
         } else if (name.isBlank()) {
             throw new IllegalArgumentException("Name cannot be blank");
         } else {
-            this.workoutName = workoutName;
+            this.workoutName = name;
         }
     }
 
@@ -220,34 +213,5 @@ public class Exercise implements java.io.Serializable
         {
             throw new IllegalArgumentException("The set does not exist in this exercise.");
         }
-    }
-
-    /**
-     * Sets order. if the order is a negative number an exception will be thrown
-     *
-     * @param order the order
-     */
-    public void setOrder(int order) {
-        if (order > 0) {
-            this.order = order;
-        } else {
-            throw new IllegalArgumentException("Order cannot be a negative number");
-        }
-    }
-
-    /**
-     * Sets the max lift of the exercise. if the max lift is a negative number an
-     * exception will be thrown.
-     *
-     * @param maxLift The max lift.
-     */
-    public void setMaxLift(float maxLift) {
-        if (maxLift > 0) {
-            this.maxLift = maxLift;
-        } else {
-            throw new IllegalArgumentException("maxLift must be a positive number...");
-
-        }
-
     }
 }
