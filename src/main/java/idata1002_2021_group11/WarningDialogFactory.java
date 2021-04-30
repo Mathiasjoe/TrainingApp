@@ -71,7 +71,7 @@ public class WarningDialogFactory {
     public Alert createWorkoutsInvalidInputDialog() {
         Alert alert = new Alert(Alert.AlertType.WARNING);
         alert.setHeaderText("Insufficient input");
-        alert.setContentText("Input fields can not be empty.\n \nSets, reps and weight must be a number.");
+        alert.setContentText("All input fields must be filled.");
 
         //Styling
         DialogPane dialogPane = alert.getDialogPane();

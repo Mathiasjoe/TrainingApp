@@ -22,8 +22,7 @@ public class App extends Application {
     Scene scene = new Scene(root);
 
     stage.setTitle("Training app");
-    //stage.initStyle(StageStyle.UNDECORATED);
-    stage.getIcons().add(new Image("whiteposing.png"));
+    stage.getIcons().add(new Image("posing.png"));
     scene.getStylesheets().add("trainingApp.css");
     stage.setScene(scene);
     stage.show();

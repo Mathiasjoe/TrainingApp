@@ -62,17 +62,17 @@
          </Button>
          <ImageView fitHeight="276.0" fitWidth="310.0" layoutX="16.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@whitelifting.png" />
+               <Image url="@lifting.png" />
             </image>
          </ImageView>
          <ImageView fitHeight="268.0" fitWidth="276.0" layoutX="316.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@whiteposing.png" />
+               <Image url="@posing.png" />
             </image>
          </ImageView>
          <ImageView fitHeight="276.0" fitWidth="288.0" layoutX="608.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@whitecalculator.png" />
+               <Image url="@calculator.png" />
             </image>
          </ImageView>
          </Pane>
