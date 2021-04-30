@@ -1,0 +1,109 @@
+.root {
+   -fx-font-weight: bold;
+   -fx-font-family: Calibri;
+}
+
+
+/* Customization of buttons */
+.Button {
+    -fx-font-size: 10pt;
+    -fx-background-color: #5a85a3;
+    -fx-text-fill: white;
+}
+
+.ButtonRed {
+    -fx-font-size: 10pt;
+    -fx-background-color: #854249;
+    -fx-text-fill: white;
+}
+
+.ButtonGreen {
+    -fx-font-size: 10pt;
+    -fx-background-color: #8ab086;
+    -fx-text-fill: white;
+}
+
+.Button:pressed {
+    -fx-padding: 10 10 10 10;
+}
+
+
+/* Customization of text field */
+.TextField {
+    -fx-background-color: #363636;
+    -fx-border-color: #363636;
+    -fx-border-width: 15px;
+    -fx-border-radius: 20px;
+    -fx-text-fill:white;
+}
+
+.TextField .content {
+    -fx-background-color: #363636;
+    -fx-border-color: #363636;
+}
+
+
+/* Customization of table view */
+.TableView {
+    -fx-background-color: #363636;
+    -fx-text-fill: white;
+}
+
+.TableView .table-cell {
+    -fx-text-fill: white;
+}
+
+.TableView .column-header {
+    -fx-background-color: #363636;
+}
+
+.TableView .column-header-background .label{
+    -fx-background-color: #363636;
+    -fx-text-fill: white;
+}
+
+.table-row-cell {
+    -fx-background-color: #363636;
+    -fx-table-cell-border-color: transparent;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #393939;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #73679e;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+
+/* Customization of dialog pane */
+.customDialog{
+    -fx-background-color: #393939;
+}
+.customDialog > *.label.content{
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+.customDialog:header *.header-panel{
+    -fx-background-color: #202020;
+    -fx-text-fill: white;
+}
+
+.customDialog:header *.header-panel *.label{
+    -fx-font-size: 18px;
+    -fx-text-fill: white;
+}
+
+.customDialog .button {
+    -fx-font-size: 10pt;
+    -fx-background-color: #5a85a3;
+    -fx-text-fill: white;
+}
+
+
+

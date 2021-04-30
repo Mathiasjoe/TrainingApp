@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #202020;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="idata1002_2021_group11.ViewCalculatorController">
+    <children>
+        <Button fx:id="homeButton" layoutX="15.0" layoutY="543.0" mnemonicParsing="false" onAction="#returnToMainScene" prefHeight="43.0" prefWidth="786.0" styleClass="Button" text="Home" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Label layoutX="13.0" layoutY="11.0" text="One Rep Max Calculator" textFill="WHITE">
+            <font>
+                <Font name="Calibri" size="22.0" />
+            </font>
+        </Label>
+        <Label layoutX="15.0" layoutY="157.0" prefHeight="17.0" prefWidth="260.0" text="Enter the number of repetitions performed" textFill="WHITE">
+            <font>
+                <Font name="JetBrains Mono ExtraBold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="enterRepetitionsField" layoutX="15.0" layoutY="174.0" prefHeight="41.0" prefWidth="365.0" styleClass="TextField" promptText="Enter repetitions" />
+        <Button fx:id="calculatorButton" layoutX="15.0" layoutY="404.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="365.0" styleClass="ButtonGreen" text="Calculate" onAction="#calculateMaxLift">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></Button>
+        <Label layoutX="418.0" layoutY="11.0" text="About:" textFill="WHITE">
+            <font>
+                <Font name="Calibri" size="22.0" />
+            </font>
+        </Label>
+        <Label layoutX="15.0" layoutY="232" text="Result" prefHeight="17.0" prefWidth="200" textFill="WHITE">
+            <font>
+                <Font name="JetBrains Mono ExtraBold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="resultField" layoutX="15.0" layoutY="249" prefHeight="41" prefWidth="365" styleClass="TextField" editable="false"/>
+        <TextArea fx:id="aboutText" layoutX="521.0" layoutY="35.0" prefHeight="476.0" prefWidth="467.0" styleClass="TextField" AnchorPane.rightAnchor="15.0" editable="false" />
+        <TextField fx:id="enterWeightField" layoutX="15.0" layoutY="99.0" prefHeight="41.0" prefWidth="365.0" styleClass="TextField" promptText="Enter weight" />
+        <Label layoutX="15.0" layoutY="82.0" text="Enter the weight lifted." textFill="WHITE" />
+    </children>
+</AnchorPane>
