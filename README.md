@@ -1,4 +1,5 @@
-##TrainingApp
+#TrainingApp
+
 The training app is an application that lets you create and store new workouts
 to keep track of. This application is a part of a project assignment in the 
 system development subject at NTNU Ålesund, created by group 11 consisting 
